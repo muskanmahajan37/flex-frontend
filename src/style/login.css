@@ -1,0 +1,59 @@
+.wrapper {
+  display: flex;
+}
+
+.first-half {
+  background-color: whitesmoke;
+  width: 40%;
+  height: 100vh;
+  text-align: center;
+}
+
+.second-half {
+  background-color: #1cbe88;
+  width: 60%;
+  height: 100vh;
+}
+
+.login-text {
+  color: #1cbe88;
+  font-size: 40px;
+  font-weight: 500;
+  margin-top: 10%;
+}
+
+.welcome-text {
+  color: white;
+  font-size: 22px;
+  font-weight: lighter;
+  margin-top: 35%;
+  margin-left: 25%;
+}
+
+.flex-text {
+  color: white;
+  margin-left: 25%;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.white-line {
+  margin-left: 25%;
+  margin-top: 1.5%;
+  height: 0.2%;
+  width: 50%;
+  background-color: white;
+}
+
+.desc-text {
+  margin-left: 25%;
+  margin-top: 1.5%;
+  color: white;
+}
+
+.form-wrapper {
+  margin: 0 auto;
+  height: 40vh;
+  width: 50%;
+  border: 1px solid #1cbe88;
+}

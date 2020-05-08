@@ -1,9 +1,14 @@
 import React from "react";
 
+// Styling
+import "./style/app.css";
+
+import Router from "./router/Router";
+
 const App = () => {
   return (
     <div>
-      <h1>Flex</h1>
+      <Router />
     </div>
   );
 };
