@@ -17,9 +17,9 @@
 
 .login-text {
   color: #1cbe88;
-  font-size: 40px;
+  font-size: 3.5rem;
   font-weight: 500;
-  margin-top: 10%;
+  margin-top: 20%;
 }
 
 .welcome-text {
@@ -53,7 +53,55 @@
 
 .form-wrapper {
   margin: 0 auto;
-  height: 40vh;
   width: 50%;
+}
+
+.custom-input {
+  background-color: whitesmoke;
+  border: 0px;
+  width: 60%;
+  margin-top: 15%;
+  border-bottom: 1px solid #1cbe88;
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+  outline: none;
+  border-bottom: 1px solid #17966b;
+}
+
+.custom-input2 {
+  background-color: whitesmoke;
+  border: 0px;
+  width: 60%;
+  margin-top: 5%;
+  border-bottom: 1px solid #1cbe88;
+  transition: all 0.3s ease;
+}
+
+.custom-input2:focus {
+  outline: none;
+  border-bottom: 1px solid #17966b;
+}
+
+.login-button {
+  width: 30%;
+  height: 5vh;
+  background-color: whitesmoke;
+  color: #1cbe88;
   border: 1px solid #1cbe88;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  color: white;
+  background-color: #1cbe88;
+  border: 1px solid #1cbe88;
+}
+
+.forgot-password {
+  color: #1cbe88;
+  font-weight: bold;
+  margin-bottom: 10%;
 }
