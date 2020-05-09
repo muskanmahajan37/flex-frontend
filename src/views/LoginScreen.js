@@ -1,32 +1,30 @@
 import React, { useState } from "react";
-import axios from "axios";
 
 // Styling
 import "../style/login.css";
 
 // Components
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 
 // React-router
 import { Link } from "react-router-dom";
 
-const LoginScreen = () => {
+// Redux
+import { connect } from "react-redux";
+import { login } from "../store/auth/thunks";
+
+const LoginScreen = ({ login }) => {
   const [email, setEmail] = useState(null);
   const [password, setPassowrd] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const body = JSON.stringify({ email, password });
-    axios
-      .post("http://localhost:8000/api/auth/login", body, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
+    const user = {
+      email,
+      password,
+    };
+    login(user);
   };
 
   return (
@@ -68,5 +66,12 @@ const LoginScreen = () => {
     </div>
   );
 };
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
 
-export default LoginScreen;
+const mapDispatchToProps = (dispatch) => ({
+  login: (user) => dispatch(login(user)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
