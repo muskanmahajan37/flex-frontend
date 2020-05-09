@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <Navbar className="navbar">
-      <Link to="/" className="logo-text">
-        FLEX
+      <Link to="/">
+        <img src={require("../assets/images/logo.png")} height={50} />
       </Link>
       <Nav className="ml-auto">
         <Nav.Link href="/">Home</Nav.Link>

@@ -30,3 +30,7 @@ body,
   font-family: "Brandon Grotesque Black";
   src: url("../assets/fonts/Brandon_blk.woff");
 }
+
+.navbar {
+  background-color: white;
+}
