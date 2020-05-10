@@ -31,8 +31,9 @@
 }
 
 .second {
-  width: 100%;
-  height: 100vh;
+  max-width: 87.5%;
+  height: 60vh;
+  margin: auto;
 }
 
 .search-input {
@@ -60,4 +61,18 @@
 
 .moto {
   font-size: 34px;
+}
+
+.services-text {
+  font-size: 30px;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 37vh;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
 }

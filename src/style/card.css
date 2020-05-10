@@ -1,0 +1,33 @@
+.card-container {
+  position: relative;
+  height: 40vh;
+  width: 15vw;
+  border-radius: 2.5%;
+  transition: all 0.3s ease-in;
+}
+
+.card-container:hover {
+  filter: brightness(107.5%);
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+}
+
+.card-description {
+  position: absolute;
+  color: white;
+  left: 5%;
+  top: 5%;
+  font-size: 16px;
+}
+
+.card-name {
+  position: absolute;
+  color: white;
+  left: 5%;
+  top: 12%;
+  font-size: 24px;
+  font-weight: bold;
+}
