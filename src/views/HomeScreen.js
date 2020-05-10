@@ -9,7 +9,7 @@ import Card from "../components/Card";
 
 const HomeScreen = () => {
   return (
-    <div>
+    <div className="parent">
       <Header />
       <div className="hero">
         <div className="hero-wrapper">

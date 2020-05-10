@@ -2,6 +2,11 @@
   font-family: "Brandon Grotesque Regular";
 }
 
+.parent {
+  max-width: 87.5%;
+  margin: auto;
+}
+
 ::placeholder {
   color: #d8d8d8;
 }
@@ -31,7 +36,6 @@
 }
 
 .second {
-  max-width: 87.5%;
   height: 60vh;
   margin: auto;
 }
