@@ -53,16 +53,6 @@
   outline: none;
 }
 
-.nav-link {
-  color: black !important;
-  font-size: 18px !important;
-  transition: all 0.2s ease;
-}
-
-.nav-link:hover {
-  color: #1cbe88 !important;
-}
-
 .hero-wrapper {
   margin-top: 10%;
   margin-left: 14%;

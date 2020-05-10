@@ -34,3 +34,15 @@ body,
 .navbar {
   background-color: white;
 }
+
+.link {
+  color: black;
+  font-size: 18px;
+  transition: all 0.2s ease;
+  margin-right: 1vw;
+}
+
+.link:hover {
+  color: #1cbe88;
+  text-decoration: none;
+}

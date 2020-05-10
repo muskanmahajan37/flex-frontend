@@ -13,9 +13,15 @@ const Header = () => {
         <img src={require("../assets/images/logo.png")} height={50} />
       </Link>
       <Nav className="ml-auto">
-        <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/login">Sign In</Nav.Link>
-        <Nav.Link href="/register">Join</Nav.Link>
+        <Link to="/" className="link">
+          Home
+        </Link>
+        <Link to="/login" className="link">
+          Sign In
+        </Link>
+        <Link to="/register" className="link">
+          Join
+        </Link>
       </Nav>
     </Navbar>
   );
