@@ -26,7 +26,8 @@ export default (state = initialState, action) => {
     case LOGIN_SUCCESS:
       return {
         ...state,
-        ...action.payload,
+        user: action.payload.user,
+        token: action.payload.access_token,
         isAuthenticated: true,
         isLoading: false,
       };
