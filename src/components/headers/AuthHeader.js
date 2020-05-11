@@ -8,8 +8,9 @@ import { Link } from "react-router-dom";
 
 // Redux
 import { connect } from "react-redux";
+import { logout } from "../../store/auth/thunks";
 
-const AuthHeader = ({ name }) => {
+const AuthHeader = ({ name, logout }) => {
   return (
     <Navbar className="navbar">
       <Link to="/">
@@ -25,6 +26,9 @@ const AuthHeader = ({ name }) => {
         <Link className="link">
           <p>{name}</p>
         </Link>
+        <p className="link" onClick={() => logout()}>
+          Logout
+        </p>
       </Nav>
     </Navbar>
   );
@@ -34,4 +38,8 @@ const mapStateToProps = (state) => ({
   name: state.auth.user.name,
 });
 
-export default connect(mapStateToProps)(AuthHeader);
+const mapDispatchToProps = (dispatch) => ({
+  logout: () => dispatch(logout()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AuthHeader);
