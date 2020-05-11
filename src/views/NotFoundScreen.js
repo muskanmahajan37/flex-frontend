@@ -4,11 +4,14 @@ import React from "react";
 import "../style/notfound.css";
 
 // Components
-import Header from "../components/Header";
+import Header from "../components/headers/Header";
 
-const NotFoundScreen = () => {
+// Redux
+import { connect } from "react-redux";
+
+const NotFoundScreen = ({ isAuthenticated }) => {
   return (
-    <div>
+    <div className="parent">
       <Header />
       <div className="center">
         <h1>You're lost buddy!</h1>
@@ -17,4 +20,8 @@ const NotFoundScreen = () => {
   );
 };
 
-export default NotFoundScreen;
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps)(NotFoundScreen);

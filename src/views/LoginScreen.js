@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Styling
 import "../style/login.css";
@@ -7,13 +7,13 @@ import "../style/login.css";
 import Form from "react-bootstrap/Form";
 
 // React-router
-import { Link } from "react-router-dom";
+import { Redirect, withRouter } from "react-router-dom";
 
 // Redux
 import { connect } from "react-redux";
 import { login } from "../store/auth/thunks";
 
-const LoginScreen = ({ login }) => {
+const LoginScreen = ({ login, isAuthenticated }) => {
   const [email, setEmail] = useState(null);
   const [password, setPassowrd] = useState(null);
 
@@ -29,40 +29,45 @@ const LoginScreen = ({ login }) => {
 
   return (
     <div className="wrapper">
-      <div className="first-half">
-        <p className="login-text">Sign In</p>
-        <div className="form-wrapper">
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formBasicEmail">
-              <input
-                type="email"
-                placeholder="Email"
-                className="custom-input"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group controlId="formBasicPassword">
-              <input
-                type="password"
-                placeholder="Password"
-                className="custom-input2"
-                onChange={(e) => setPassowrd(e.target.value)}
-              />
-            </Form.Group>
-            <p className="forgot-password">Forgot password?</p>
-            <button className="login-button" type="submit">
-              Submit
-            </button>
-          </Form>
-        </div>
-      </div>
-
-      <div className="second-half">
-        <p className="welcome-text">Welcome to</p>
-        <p className="flex-text">Frelance Expert</p>
-        <div className="white-line" />
-        <p className="desc-text">Freelance platform</p>
-      </div>
+      {isAuthenticated ? (
+        <Redirect to="/" />
+      ) : (
+        <>
+          <div className="first-half">
+            <p className="login-text">Sign In</p>
+            <div className="form-wrapper">
+              <Form onSubmit={handleSubmit}>
+                <Form.Group controlId="formBasicEmail">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    className="custom-input"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </Form.Group>
+                <Form.Group controlId="formBasicPassword">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    className="custom-input2"
+                    onChange={(e) => setPassowrd(e.target.value)}
+                  />
+                </Form.Group>
+                <p className="forgot-password">Forgot password?</p>
+                <button className="login-button" type="submit">
+                  Submit
+                </button>
+              </Form>
+            </div>
+          </div>
+          <div className="second-half">
+            <p className="welcome-text">Welcome to</p>
+            <p className="flex-text">Frelance Expert</p>
+            <div className="white-line" />
+            <p className="desc-text">Freelance platform</p>
+          </div>
+        </>
+      )}
     </div>
   );
 };
@@ -74,4 +79,7 @@ const mapDispatchToProps = (dispatch) => ({
   login: (user) => dispatch(login(user)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(LoginScreen));

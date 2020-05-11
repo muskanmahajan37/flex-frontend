@@ -6,11 +6,11 @@ import { Navbar, Nav } from "react-bootstrap";
 // React-router
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const GuestHeader = () => {
   return (
     <Navbar className="navbar">
       <Link to="/">
-        <img src={require("../assets/images/logo.png")} height={50} />
+        <img src={require("../../assets/images/logo.png")} height={50} />
       </Link>
       <Nav className="ml-auto">
         <Link to="/" className="link">
@@ -27,4 +27,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default GuestHeader;
