@@ -1,0 +1,60 @@
+html,
+body,
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Brandon Grotesque Thin";
+}
+
+@font-face {
+  font-family: "Brandon Grotesque Regular";
+  src: url("../assets/fonts/Brandon_reg.woff");
+}
+
+@font-face {
+  font-family: "Brandon Grotesque Thin";
+  src: url("../assets/fonts/Brandon_thin.woff");
+}
+
+@font-face {
+  font-family: "Brandon Grotesque Light";
+  src: url("../assets/fonts/Brandon_light.woff");
+}
+
+@font-face {
+  font-family: "Brandon Grotesque Bold";
+  src: url("../assets/fonts/Brandon_bld.woff");
+}
+
+@font-face {
+  font-family: "Brandon Grotesque Black";
+  src: url("../assets/fonts/Brandon_blk.woff");
+}
+
+.navbar {
+  background-color: white;
+}
+
+.link {
+  color: black;
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+
+.link:nth-child(1) {
+  margin-right: 1vw;
+}
+
+.link:nth-child(2) {
+  margin-right: 1vw;
+}
+
+.link:nth-child(3) {
+  margin-right: 1vw;
+}
+
+.link:hover {
+  color: #1cbe88;
+  text-decoration: none;
+  cursor: pointer;
+}
