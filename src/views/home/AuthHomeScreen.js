@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 
 // Styling
 import "../../style/home.css";
 
 // Components
 import Header from "../../components/headers/Header";
-import Card from "../../components/Card";
 
 // Redux
 import { connect } from "react-redux";
