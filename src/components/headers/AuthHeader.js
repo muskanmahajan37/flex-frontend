@@ -13,8 +13,8 @@ import { logout } from "../../store/auth/thunks";
 const AuthHeader = ({ name, logout }) => {
   return (
     <Navbar className="navbar">
-      <Link to="/">
-        <img src={require("../../assets/images/logo.png")} height={50} />
+      <Link to="/" className="logo">
+        FLEX
       </Link>
       <Nav className="ml-auto">
         <Link to="/" className="link">
@@ -23,12 +23,10 @@ const AuthHeader = ({ name, logout }) => {
         <Link to="/" className="link">
           Switch to selling
         </Link>
-        <Link className="link">
-          <p>{name}</p>
-        </Link>
-        <p className="link" onClick={() => logout()}>
+        <Link className="link">{name}</Link>
+        <Link className="link" onClick={() => logout()}>
           Logout
-        </p>
+        </Link>
       </Nav>
     </Navbar>
   );

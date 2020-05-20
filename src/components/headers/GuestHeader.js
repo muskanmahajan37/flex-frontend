@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
 const GuestHeader = () => {
   return (
     <Navbar className="navbar">
-      <Link to="/">
-        <img src={require("../../assets/images/logo.png")} height={50} />
+      <Link to="/" className="logo">
+        FLEX
       </Link>
       <Nav className="ml-auto">
         <Link to="/" className="link">
