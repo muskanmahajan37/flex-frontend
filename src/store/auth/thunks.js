@@ -14,15 +14,11 @@ export const register = ({ email, password }) => async (dispatch) => {
   dispatch(registerRequest({ email, password }));
   try {
     const body = JSON.stringify({ email, password });
-    const res = await axios.post(
-      "http://localhost:8000/api/auth/signup",
-      body,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const res = await axios.post("http://localhost:8000/register", body, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     dispatch(registerSuccess(res.data));
   } catch (error) {
     dispatch(registerFail());
@@ -33,7 +29,7 @@ export const login = ({ email, password }) => async (dispatch) => {
   dispatch(loginRequest({ email, password }));
   try {
     const body = JSON.stringify({ email, password });
-    const res = await axios.post("http://localhost:8000/api/auth/login", body, {
+    const res = await axios.post("http://localhost:8000/login", body, {
       headers: {
         "Content-Type": "application/json",
       },
