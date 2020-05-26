@@ -5,6 +5,7 @@ import "../../style/home.css";
 
 // Components
 import Header from "../../components/headers/Header";
+import CategoryHeader from "../../components/headers/CategoryHeader";
 
 // Redux
 import { connect } from "react-redux";
@@ -13,7 +14,7 @@ const AuthHomeScreen = ({ userId }) => {
   return (
     <div className="parent">
       <Header />
-      <h1>Auth home screen</h1>
+      <CategoryHeader />
     </div>
   );
 };
