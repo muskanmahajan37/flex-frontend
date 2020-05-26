@@ -10,10 +10,20 @@ import {
 
 import axios from "axios";
 
-export const register = ({ email, password }) => async (dispatch) => {
-  dispatch(registerRequest({ email, password }));
+export const register = ({
+  name,
+  email,
+  password,
+  password_confirmation,
+}) => async (dispatch) => {
+  dispatch(registerRequest({ name, email, password, password_confirmation }));
   try {
-    const body = JSON.stringify({ email, password });
+    const body = JSON.stringify({
+      name,
+      email,
+      password,
+      password_confirmation,
+    });
     const res = await axios.post("http://localhost:8000/register", body, {
       headers: {
         "Content-Type": "application/json",
