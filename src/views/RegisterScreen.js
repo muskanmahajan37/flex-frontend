@@ -70,11 +70,12 @@ const RegisterScreen = ({ registerAPI, isAuthenticated }) => {
                     onChange={(e) => setName(e.target.value)}
                   />
                 </Form.Group>
-                {errors.name && errors.name.type === "required" && (
+                {errors.name && errors.name.type === "required" ? (
                   <p className="error-message">This field is required</p>
-                )}
-                {errors.name && errors.name.type === "minLength" && (
-                  <p className="error-message">Please enter a valid name</p>
+                ) : errors.name && errors.name.type === "minLength" ? (
+                  <p className="error-message">Enter a valid name</p>
+                ) : (
+                  <p className="hidden-message">!</p>
                 )}
                 <Form.Group controlId="formBasicEmail">
                   <input
@@ -88,11 +89,12 @@ const RegisterScreen = ({ registerAPI, isAuthenticated }) => {
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </Form.Group>
-                {errors.email && errors.email.type === "required" && (
+                {errors.email && errors.email.type === "required" ? (
                   <p className="error-message">This field is required</p>
-                )}
-                {errors.email && errors.email.type === "pattern" && (
-                  <p className="error-message">Enter a valid email address</p>
+                ) : errors.email && errors.email.type === "pattern" ? (
+                  <p className="error-message">Enter a valid email</p>
+                ) : (
+                  <p className="hidden-message">!</p>
                 )}
                 <Form.Group controlId="formBasicPassword">
                   <input
@@ -104,8 +106,10 @@ const RegisterScreen = ({ registerAPI, isAuthenticated }) => {
                     onChange={(e) => setPassowrd(e.target.value)}
                   />
                 </Form.Group>
-                {errors.password && (
+                {errors.password ? (
                   <p className="error-message">This field is required</p>
+                ) : (
+                  <p className="hidden-message">!</p>
                 )}
                 <Form.Group controlId="formBasicPasswordConfirmation">
                   <input
@@ -121,13 +125,14 @@ const RegisterScreen = ({ registerAPI, isAuthenticated }) => {
                   />
                 </Form.Group>
                 {errors.confirmPassword &&
-                  errors.confirmPassword.type === "required" && (
-                    <p className="error-message">This field is required</p>
-                  )}
-                {errors.confirmPassword &&
-                  errors.confirmPassword.type === "validate" && (
-                    <p className="error-message">Passwords do not match</p>
-                  )}
+                errors.confirmPassword.type === "required" ? (
+                  <p className="error-message">This field is required</p>
+                ) : errors.confirmPassword &&
+                  errors.confirmPassword.type === "validate" ? (
+                  <p className="error-message">Passwords do not match</p>
+                ) : (
+                  <p className="hidden-message">!</p>
+                )}
                 <Link to="/login" className="have-account">
                   <p className="have-account-paragrah">
                     Already have an account?

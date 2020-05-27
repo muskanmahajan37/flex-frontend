@@ -60,7 +60,6 @@
   background-color: whitesmoke;
   border: 0px;
   width: 60%;
-  margin-top: 15%;
   border-bottom: 1px solid #1cbe88;
   transition: all 0.3s ease;
 }
@@ -74,7 +73,6 @@
   background-color: whitesmoke;
   border: 0px;
   width: 60%;
-  margin-top: 5%;
   border-bottom: 1px solid #1cbe88;
   transition: all 0.3s ease;
 }
@@ -116,4 +114,9 @@
 
 .error-message {
   color: #ff0000;
+}
+
+.hidden-message {
+  color: whitesmoke;
+  margin: 0;
 }
