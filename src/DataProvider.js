@@ -15,7 +15,7 @@ const DataProvider = ({ children }) => {
   useEffect(() => {
     load && dispatch(fetchCategories());
     dispatch(fetchServices());
-  }, [dispatch]);
+  }, [dispatch, load]);
 
   return <React.Fragment>{React.Children.only(children)}</React.Fragment>;
 };
