@@ -8,48 +8,34 @@ import {
   LOGOUT,
 } from "../types";
 
-export const loginRequest = (payload) => {
-  return {
-    type: LOGIN_REQUEST,
-    payload,
-  };
-};
+export const loginRequest = (payload) => ({
+  type: LOGIN_REQUEST,
+  payload,
+});
 
-export const loginSuccess = (payload) => {
-  return {
-    type: LOGIN_SUCCESS,
-    payload,
-  };
-};
+export const loginSuccess = (payload) => ({
+  type: LOGIN_SUCCESS,
+  payload,
+});
 
-export const loginFail = () => {
-  return {
-    type: LOGIN_FAIL,
-  };
-};
+export const loginFail = () => ({
+  type: LOGIN_FAIL,
+});
 
-export const registerRequest = (payload) => {
-  return {
-    type: REGISTER_REQUEST,
-    payload,
-  };
-};
+export const registerRequest = (payload) => ({
+  type: REGISTER_REQUEST,
+  payload,
+});
 
-export const registerSuccess = (payload) => {
-  return {
-    type: REGISTER_SUCCESS,
-    payload,
-  };
-};
+export const registerSuccess = (payload) => ({
+  type: REGISTER_SUCCESS,
+  payload,
+});
 
-export const registerFail = () => {
-  return {
-    type: REGISTER_FAIL,
-  };
-};
+export const registerFail = () => ({
+  type: REGISTER_FAIL,
+});
 
-export const logout = () => {
-  return {
-    type: LOGOUT,
-  };
-};
+export const logout = () => ({
+  type: LOGOUT,
+});
