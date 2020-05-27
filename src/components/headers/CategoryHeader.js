@@ -3,49 +3,30 @@ import React from "react";
 // Styling
 import "../../style/categoryHeader.css";
 
-const CategoryHeader = () => {
+// Redux
+import { connect } from "react-redux";
+
+const CategoryHeader = ({ categories }) => {
   return (
     <ul>
-      <li className="parent-li">
-        Programming
-        <ul className="submenu">
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-        </ul>
-      </li>
-      <li className="parent-li">
-        Design
-        <ul className="submenu">
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-          <li className="subitem">test</li>
-        </ul>
-      </li>
+      {categories.map((item) => (
+        <li key={item.id} className="parent-li">
+          {item.name}
+          <ul className="submenu">
+            {item.subcategories.map((subitem) => (
+              <li key={subitem.id} className="subitem">
+                {subitem.name}
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))}
     </ul>
   );
 };
 
-export default CategoryHeader;
+const mapStateToProps = (state) => ({
+  categories: state.categories.categories,
+});
+
+export default connect(mapStateToProps)(CategoryHeader);
