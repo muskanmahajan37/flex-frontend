@@ -15,10 +15,13 @@ ul {
   position: relative;
   margin: 10px 20px;
   cursor: pointer;
+  color: #757575;
 }
 
 .parent-li:hover {
   text-decoration: underline;
+  text-decoration-color: #757575;
+  color: #757575;
 }
 
 .parent-li:hover .submenu {
@@ -34,4 +37,9 @@ ul {
   font-size: 1.4rem;
   color: #757575;
   cursor: pointer;
+}
+
+.subitem:hover {
+  text-decoration: none;
+  color: #757575;
 }
