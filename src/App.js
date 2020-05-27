@@ -5,6 +5,7 @@ import "./style/app.css";
 
 // Components
 import Router from "./router/Router";
+import DataProvider from "./DataProvider";
 
 // Redux
 import { Provider } from "react-redux";
@@ -17,7 +18,9 @@ const App = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <Router />
+        <DataProvider>
+          <Router />
+        </DataProvider>
       </PersistGate>
     </Provider>
   );
