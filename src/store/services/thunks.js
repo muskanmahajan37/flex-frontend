@@ -12,7 +12,6 @@ export const fetchServices = () => async (dispatch) => {
     const res = await axios.get(`http://localhost:8000/services`);
     dispatch(fetchServicesSuccess(res.data));
   } catch (error) {
-    console.log(`Error: ${error}`);
     dispatch(fetchServicesFail());
   }
 };
