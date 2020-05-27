@@ -24,7 +24,7 @@ export const register = ({
       password,
       password_confirmation,
     });
-    const res = await axios.post("http://localhost:8000/register", body, {
+    const res = await axios.post(`http://localhost:8000/register`, body, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -39,7 +39,7 @@ export const login = ({ email, password }) => async (dispatch) => {
   dispatch(loginRequest({ email, password }));
   try {
     const body = JSON.stringify({ email, password });
-    const res = await axios.post("http://localhost:8000/login", body, {
+    const res = await axios.post(`http://localhost:8000/login`, body, {
       headers: {
         "Content-Type": "application/json",
       },
