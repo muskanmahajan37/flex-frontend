@@ -52,11 +52,12 @@ const LoginScreen = ({ login, isAuthenticated }) => {
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </Form.Group>
-                {errors.email && errors.email.type === "required" && (
+                {errors.email && errors.email.type === "required" ? (
                   <p className="error-message">This field is required</p>
-                )}
-                {errors.email && errors.email.type === "pattern" && (
+                ) : errors.email && errors.email.type === "pattern" ? (
                   <p className="error-message">Enter a valid email address</p>
+                ) : (
+                  <p className="hidden-message">!</p>
                 )}
                 <Form.Group controlId="formBasicPassword">
                   <input
@@ -68,8 +69,10 @@ const LoginScreen = ({ login, isAuthenticated }) => {
                     onChange={(e) => setPassowrd(e.target.value)}
                   />
                 </Form.Group>
-                {errors.password && (
+                {errors.password ? (
                   <p className="error-message">This field is required</p>
+                ) : (
+                  <p className="hidden-message">!</p>
                 )}
                 <p className="forgot-password">Forgot password?</p>
                 <button className="login-button" type="submit">

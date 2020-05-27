@@ -103,9 +103,16 @@
 .forgot-password {
   color: #1cbe88;
   font-weight: bold;
+  margin-top: 2.5%;
   margin-bottom: 10%;
 }
 
 .error-message {
   color: #ff0000;
+  margin: 0;
+}
+
+.hidden-message {
+  color: whitesmoke;
+  margin: 0;
 }
