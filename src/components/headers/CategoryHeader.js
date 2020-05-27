@@ -6,20 +6,31 @@ import "../../style/categoryHeader.css";
 // Redux
 import { connect } from "react-redux";
 
+// React-router
+import { Link } from "react-router-dom";
+
 const CategoryHeader = ({ categories }) => {
   return (
     <ul>
       {categories.map((item) => (
-        <li key={item.id} className="parent-li">
+        <Link
+          to={`/${item.name.toLowerCase()}`}
+          key={item.id}
+          className="parent-li"
+        >
           {item.name}
           <ul className="submenu">
             {item.subcategories.map((subitem) => (
-              <li key={subitem.id} className="subitem">
+              <Link
+                to={`${item.name.toLowerCase()}/${subitem.name.toLowerCase()}`}
+                key={subitem.id}
+                className="subitem"
+              >
                 {subitem.name}
-              </li>
+              </Link>
             ))}
           </ul>
-        </li>
+        </Link>
       ))}
     </ul>
   );
