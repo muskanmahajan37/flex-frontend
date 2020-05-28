@@ -1,0 +1,31 @@
+.hero {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.subcategory-container {
+  width: 17.5vw;
+}
+
+.services-container {
+  width: 82.5vw;
+}
+
+.subcategory-list {
+  margin: 0;
+}
+
+.category-main-title {
+  font-size: 1.25rem;
+}
+
+.subcategory-name {
+  font-size: 1.1rem;
+  color: #adadad;
+  margin-bottom: 2%;
+}
+
+.subcategory-name:hover {
+  color: #adadad;
+}
