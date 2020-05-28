@@ -5,12 +5,14 @@ import "../../style/home.css";
 
 // Components
 import Header from "../../components/headers/Header";
+import CategoryHeader from "../../components/headers/CategoryHeader";
 import Card from "../../components/Card";
 
 const HomeScreen = () => {
   return (
     <div className="parent">
       <Header />
+      <CategoryHeader />
       <div className="hero">
         <div className="hero-wrapper">
           <p className="moto">Find your perfect solution</p>
