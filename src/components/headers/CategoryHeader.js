@@ -14,7 +14,12 @@ const CategoryHeader = ({ categories }) => {
     <ul>
       {categories.map((item) => (
         <Link
-          to={`/${item.name.toLowerCase()}`}
+          to={{
+            pathname: `/${item.name.toLowerCase()}`,
+            state: {
+              categoryId: item.id,
+            },
+          }}
           key={item.id}
           className="parent-li"
         >
@@ -22,7 +27,12 @@ const CategoryHeader = ({ categories }) => {
           <ul className="submenu">
             {item.subcategories.map((subitem) => (
               <Link
-                to={`${item.name.toLowerCase()}/${subitem.name.toLowerCase()}`}
+                to={{
+                  pathname: `/${item.name.toLowerCase()}/${subitem.name.toLowerCase()}`,
+                  state: {
+                    subcategoryId: subitem.id,
+                  },
+                }}
                 key={subitem.id}
                 className="subitem"
               >
