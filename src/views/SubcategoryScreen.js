@@ -2,12 +2,14 @@ import React from "react";
 
 // Components
 import Header from "../components/headers/Header";
+import CategoryHeader from "../components/headers/CategoryHeader";
 
 const SubcategoryScreen = () => {
   return (
     <div className="parent">
       <Header />
-      <h1>Subategory screen</h1>
+      <CategoryHeader />
+      <h1>Sucbategory screen</h1>
     </div>
   );
 };
