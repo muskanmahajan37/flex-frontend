@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const GuestHeader = () => {
   return (
-    <Navbar className="navbar">
+    <Navbar style={{ padding: 0 }} className="navbar">
       <Link to="/" className="logo">
         FLEX
       </Link>

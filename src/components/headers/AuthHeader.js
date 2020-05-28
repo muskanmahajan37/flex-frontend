@@ -12,7 +12,7 @@ import { logout } from "../../store/auth/thunks";
 
 const AuthHeader = ({ name, logout }) => {
   return (
-    <Navbar className="navbar">
+    <Navbar style={{ padding: 0 }} className="navbar">
       <Link to="/" className="logo">
         FLEX
       </Link>
