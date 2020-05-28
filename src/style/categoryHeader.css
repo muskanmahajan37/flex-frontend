@@ -26,6 +26,7 @@ ul {
 
 .parent-li:hover .submenu {
   display: flex;
+  background-color: white;
   flex-wrap: wrap;
   flex-direction: column;
   width: 30vw;
