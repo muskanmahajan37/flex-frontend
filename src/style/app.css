@@ -6,6 +6,8 @@ body,
   font-family: "Brandon Grotesque Thin";
 }
 
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css");
+
 @font-face {
   font-family: "Brandon Grotesque Regular";
   src: url("../assets/fonts/Brandon_reg.woff");
@@ -33,6 +35,7 @@ body,
 
 .navbar {
   background-color: white;
+  border: 0px;
 }
 
 .link {
@@ -60,4 +63,37 @@ body,
 .logo:hover {
   text-decoration: none;
   color: black;
+}
+
+.my-loader {
+  text-align: center;
+  color: #1cbe88;
+}
+
+.tiny {
+  font-size: 0.5rem;
+}
+
+.little {
+  font-size: 1rem;
+}
+
+.little p {
+  font-size: 0.75rem;
+}
+
+.medium {
+  font-size: 2rem;
+}
+
+.medium p {
+  font-size: 1.25rem;
+}
+
+.large {
+  font-size: 5rem;
+}
+
+.large p {
+  font-size: 1.5rem;
 }
