@@ -3,6 +3,7 @@ ul {
   padding: 0;
   list-style: none;
   display: flex;
+  justify-content: space-between;
   color: #757575;
 }
 
@@ -13,7 +14,7 @@ ul {
 
 .parent-li {
   position: relative;
-  margin: 10px 20px;
+  margin: 2.5% 0;
   cursor: pointer;
   color: #757575;
 }
@@ -27,6 +28,7 @@ ul {
 .parent-li:hover .submenu {
   display: flex;
   background-color: white;
+  z-index: 1000;
   flex-wrap: wrap;
   flex-direction: column;
   width: 30vw;
