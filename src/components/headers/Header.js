@@ -1,9 +1,13 @@
 import React from "react";
 
+// Styling
+import "../../style/header.css";
+
 // Components
 import AuthHeader from "./AuthHeader";
 import GuestHeader from "./GuestHeader";
 
+// Redux
 import { connect } from "react-redux";
 
 const Header = ({ isAuthenticated }) =>
