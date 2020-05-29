@@ -1,3 +1,4 @@
+/* category page */
 .hero {
   display: flex;
   width: 100%;
@@ -10,6 +11,12 @@
 
 .services-container {
   width: 82.5vw;
+}
+
+.inner-service-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .subcategory-list {
@@ -28,4 +35,30 @@
 
 .subcategory-name:hover {
   color: #adadad;
+}
+
+/* service component */
+.service-container {
+  height: 40vh;
+  width: 20vw;
+  border: 1px solid #bababa;
+  margin-bottom: 5%;
+  border-radius: 3px
+}
+
+.service-image {
+  height: 20vh;
+  width: 100%;
+}
+
+.service-name {
+  margin: 0;
+}
+
+.service-description {
+  margin: 0;
+}
+
+.service-price {
+  margin: 0;
 }
