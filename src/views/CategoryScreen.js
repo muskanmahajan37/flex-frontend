@@ -8,6 +8,7 @@ import "../style/service.css";
 import Header from "../components/headers/Header";
 import CategoryHeader from "../components/headers/CategoryHeader";
 import Loader from "../components/Loader";
+import Service from "../components/service-components/Service";
 
 // React-router
 import { Link } from "react-router-dom";
@@ -50,11 +51,19 @@ const CategoryScreen = ({ location }) => {
         </div>
         <div className="services-container">
           <h1>{categoryName}</h1>
-          {loading ? (
-            <Loader msg="Loading services" format="medium" />
-          ) : (
-            data.map((item) => <p key={item.id}>{item.name}</p>)
-          )}
+          <div className="inner-service-container">
+            {loading ? (
+              <Loader msg="Loading services" format="medium" />
+            ) : (
+              data.map((item) => (
+                <Service
+                  name={item.name}
+                  description={item.description}
+                  price={item.price}
+                />
+              ))
+            )}
+          </div>
         </div>
       </div>
     </div>
