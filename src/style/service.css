@@ -37,6 +37,14 @@
   color: #adadad;
 }
 
+.center-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 100%;
+}
+
 /* service component */
 .service-container {
   height: 40vh;
