@@ -51,19 +51,21 @@ const CategoryScreen = ({ location }) => {
         </div>
         <div className="services-container">
           <h1>{categoryName}</h1>
-          <div className="inner-service-container">
-            {loading ? (
+          {loading ? (
+            <div className="center-loader">
               <Loader msg="Loading services" format="medium" />
-            ) : (
-              data.map((item) => (
-                <Service
-                  name={item.name}
-                  description={item.description}
-                  price={item.price}
-                />
-              ))
-            )}
-          </div>
+            </div>
+          ) : (
+            <div className="inner-service-container">
+              {data.map((item) => (
+              <Service
+                name={item.name}
+                description={item.description}
+                price={item.price}
+              />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
