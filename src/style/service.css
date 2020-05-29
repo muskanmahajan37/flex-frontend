@@ -27,6 +27,11 @@
   font-size: 1.25rem;
 }
 
+.category-main-description {
+  font-size: 1rem;
+  color: #7a7a7a;
+}
+
 .subcategory-name {
   font-size: 1.1rem;
   color: #adadad;
