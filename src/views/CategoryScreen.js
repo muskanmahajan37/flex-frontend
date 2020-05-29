@@ -17,7 +17,12 @@ const CategoryScreen = ({ location }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const { state } = location;
-  const { categoryId, categoryName, subcategories } = state;
+  const {
+    categoryId,
+    categoryName,
+    categoryDescription,
+    subcategories,
+  } = state;
 
   useEffect(() => {
     const fetchServices = async () => {
@@ -51,6 +56,7 @@ const CategoryScreen = ({ location }) => {
         </div>
         <div className="services-container">
           <h1>{categoryName}</h1>
+          <p className="category-main-description">{categoryDescription}</p>
           {loading ? (
             <div className="center-loader">
               <Loader msg="Loading services" format="medium" />
@@ -58,11 +64,11 @@ const CategoryScreen = ({ location }) => {
           ) : (
             <div className="inner-service-container">
               {data.map((item) => (
-              <Service
-                name={item.name}
-                description={item.description}
-                price={item.price}
-              />
+                <Service
+                  name={item.name}
+                  description={item.description}
+                  price={item.price}
+                />
               ))}
             </div>
           )}
