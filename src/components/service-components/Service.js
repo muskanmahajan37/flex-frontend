@@ -3,7 +3,10 @@ import React from 'react';
 // Styling
 import '../../style/service.css';
 
-const Service = ({ name, username, price, image }) => {
+// React-Router
+import { Link } from 'react-router-dom';
+
+const Service = ({ name, username, description, price, image }) => {
   return (
     <div className='service-container'>
       <img
@@ -11,9 +14,13 @@ const Service = ({ name, username, price, image }) => {
         src={`http://localhost:8000/images/${image}`}
         alt={'Profile'}
       />
-      <p className='service-name'>{name}</p>
-      <p className='service-description'>{username}</p>
-      <p className='service-price'>€{price}</p>
+      <div className="service-details-container">
+        <Link to={`/${username}`} className='user-name'>
+          {username}
+        </Link>
+        <p className='service-name'>{name}</p>
+        <p className='service-price'>€{price}</p>
+      </div>
     </div>
   );
 };

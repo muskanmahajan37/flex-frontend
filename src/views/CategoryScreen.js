@@ -67,8 +67,8 @@ const CategoryScreen = ({ location }) => {
                 <Service
                   key={item.id}
                   name={item.name}
+                  username={item.username}
                   image={item.image}
-                  description={item.description}
                   price={item.price}
                 />
               ))}
