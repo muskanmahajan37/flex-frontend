@@ -50,7 +50,7 @@ const AuthHeader = ({ user, logout }) => {
           />
           {menu && (
             <div className="header-submenu">
-              <Link to="/" className="header-submenu-item">
+              <Link to={`/${user.name}`} className="header-submenu-item">
                 Profile
               </Link>
               <Link to="/" className="header-submenu-item">
@@ -60,11 +60,7 @@ const AuthHeader = ({ user, logout }) => {
                 Help & Support
               </Link>
               <div className="divider" />
-              <Link
-                to="/"
-                className="header-submenu-item"
-                onClick={() => logout()}
-              >
+              <Link className="header-submenu-item" onClick={() => logout()}>
                 Logout
               </Link>
             </div>
