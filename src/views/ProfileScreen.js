@@ -9,7 +9,10 @@ import Header from '../components/headers/Header';
 import CategoryHeader from '../components/headers/CategoryHeader';
 import Loader from '../components/Loader';
 
-const ProfileScreen = ({ match }) => {
+// Redux
+import { connect } from 'react-redux';
+
+const ProfileScreen = ({ match, isAuthenticated }) => {
   const [currentUser, setUser] = useState({});
   const [loading, setLoading] = useState(false);
   const { params } = match;
@@ -27,7 +30,7 @@ const ProfileScreen = ({ match }) => {
   return (
     <div className='parent'>
       <Header />
-      <CategoryHeader />
+      {!isAuthenticated && <CategoryHeader />}
       <div className='hero'>
         <div className='parent-wrapper'>
           {loading ? (
@@ -51,4 +54,8 @@ const ProfileScreen = ({ match }) => {
   );
 };
 
-export default ProfileScreen;
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps)(ProfileScreen);
