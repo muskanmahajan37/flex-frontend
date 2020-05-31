@@ -17,8 +17,8 @@ const Router = () => (
       <Route path="/" exact component={HomeScreen} />
       <Route path="/login" component={LoginScreen} />
       <Route path="/register" component={RegisterScreen} />
-      <Route path="/:category" exact component={CategoryScreen} />
-      <Route path="/:category/:subcategory" component={SubcategoryScreen} />
+      <Route path="/categories/:category" exact component={CategoryScreen} />
+      <Route path="/categories/:category/:subcategory" component={SubcategoryScreen} />
       <Route path="*" component={NotFoundScreen} />
     </Switch>
   </BrowserRouter>
