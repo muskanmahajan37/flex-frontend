@@ -46,6 +46,7 @@ const AuthHeader = ({ user, logout }) => {
             onClick={() => setMenu(!menu)}
             onBlur={() => setMenu(false)}
             ref={wrapperRef}
+            alt={"Profile"}
           />
           {menu && (
             <div className="header-submenu">
