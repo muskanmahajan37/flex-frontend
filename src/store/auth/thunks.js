@@ -6,9 +6,9 @@ import {
   loginSuccess,
   loginFail,
   logout as logoutAPI,
-} from "./actions";
+} from './actions';
 
-import axios from "axios";
+import axios from 'axios';
 
 export const register = ({
   name,
@@ -24,9 +24,9 @@ export const register = ({
       password,
       password_confirmation,
     });
-    const res = await axios.post(`http://localhost:8000/register`, body, {
+    const res = await axios.post(`/register`, body, {
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
     dispatch(registerSuccess(res.data));
@@ -39,9 +39,9 @@ export const login = ({ email, password }) => async (dispatch) => {
   dispatch(loginRequest({ email, password }));
   try {
     const body = JSON.stringify({ email, password });
-    const res = await axios.post(`http://localhost:8000/login`, body, {
+    const res = await axios.post(`/login`, body, {
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
     dispatch(loginSuccess(res.data));

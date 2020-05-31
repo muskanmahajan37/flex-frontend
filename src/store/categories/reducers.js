@@ -2,7 +2,7 @@ import {
   FETCH_CATEGORIES_REQUEST,
   FETCH_CATEGORIES_SUCCESS,
   FETCH_CATEGORIES_FAIL,
-} from "../types";
+} from '../types';
 
 const initialState = {
   categories: [],

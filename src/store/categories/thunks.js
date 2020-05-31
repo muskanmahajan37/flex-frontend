@@ -2,14 +2,14 @@ import {
   fetchCategoriesRequest,
   fetchCategoriesSuccess,
   fetchCategoriesFail,
-} from "./actions";
+} from './actions';
 
-import axios from "axios";
+import axios from 'axios';
 
 export const fetchCategories = () => async (dispatch) => {
   dispatch(fetchCategoriesRequest());
   try {
-    const res = await axios.get(`http://localhost:8000/categories`);
+    const res = await axios.get(`/categories`);
     dispatch(fetchCategoriesSuccess(res.data));
   } catch (error) {
     dispatch(fetchCategoriesFail());
