@@ -1,18 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 
 // Styling
-import "../style/profile.css";
+import '../style/profile.css';
 
 // Components
-import Header from "../components/headers/Header";
-import CategoryHeader from "../components/headers/CategoryHeader";
+import Header from '../components/headers/Header';
+import CategoryHeader from '../components/headers/CategoryHeader';
 
 const ProfileScreen = () => {
   return (
-    <div className="parent">
+    <div className='parent'>
       <Header />
       <CategoryHeader />
-      <h1>Profile screen</h1>
+      <div className='hero'>
+        <div className='parent-wrapper'>
+          <div className='profile-container'>
+            <img src={``} alt={'Profile'} />
+          </div>
+          <div className='gigs-container'></div>
+        </div>
+      </div>
     </div>
   );
 };

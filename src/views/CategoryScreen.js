@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 // Styling
-import "../style/service.css";
+import '../style/service.css';
 
 // Components
-import Header from "../components/headers/Header";
-import CategoryHeader from "../components/headers/CategoryHeader";
-import Loader from "../components/Loader";
-import Service from "../components/service-components/Service";
+import Header from '../components/headers/Header';
+import CategoryHeader from '../components/headers/CategoryHeader';
+import Loader from '../components/Loader';
+import Service from '../components/service-components/Service';
 
 // React-router
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const CategoryScreen = ({ location }) => {
   const [data, setData] = useState([]);
@@ -37,32 +37,32 @@ const CategoryScreen = ({ location }) => {
   }, [categoryId]);
 
   return (
-    <div className="parent">
+    <div className='parent'>
       <Header />
       <CategoryHeader />
-      <div className="hero">
-        <div className="subcategory-container">
-          <p className="category-main-title">{categoryName}</p>
+      <div className='hero'>
+        <div className='subcategory-container'>
+          <p className='category-main-title'>{categoryName}</p>
           {subcategories.map((item) => (
-            <ul className="subcategory-list" key={item.id}>
+            <ul className='subcategory-list' key={item.id}>
               <Link
                 to={`/categories/${categoryName.toLowerCase()}/${item.name.toLowerCase()}`}
-                className="subcategory-name"
+                className='subcategory-name'
               >
                 {item.name}
               </Link>
             </ul>
           ))}
         </div>
-        <div className="services-container">
+        <div className='services-container'>
           <h1>{categoryName}</h1>
-          <p className="category-main-description">{categoryDescription}</p>
+          <p className='category-main-description'>{categoryDescription}</p>
           {loading ? (
-            <div className="center-loader">
-              <Loader msg="Loading services" format="medium" />
+            <div className='center-loader'>
+              <Loader msg='Loading services' format='medium' />
             </div>
           ) : (
-            <div className="inner-service-container">
+            <div className='inner-service-container'>
               {data.map((item) => (
                 <Service
                   key={item.id}

@@ -1,0 +1,20 @@
+.parent-wrapper {
+  width: 100%;
+  margin-top: 2.5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-container {
+  height: 75vh;
+  width: 25vw;
+  border: 1px solid #bababa;
+  border-radius: 1px;
+}
+
+.gigs-container {
+  height: 75vh;
+  width: 55vw;
+  border: 1px solid #bababa;
+  border-radius: 1px;
+}

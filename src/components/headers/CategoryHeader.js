@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
 // Styling
-import "../../style/categoryHeader.css";
+import '../../style/categoryHeader.css';
 
 // Redux
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
 // React-router
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const CategoryHeader = ({ categories }) => {
   return (
@@ -24,10 +24,10 @@ const CategoryHeader = ({ categories }) => {
             },
           }}
           key={item.id}
-          className="parent-li"
+          className='parent-li'
         >
           {item.name}
-          <ul className="submenu">
+          <ul className='submenu'>
             {item.subcategories.map((subitem) => (
               <Link
                 to={{
@@ -37,7 +37,7 @@ const CategoryHeader = ({ categories }) => {
                   },
                 }}
                 key={subitem.id}
-                className="subitem"
+                className='subitem'
               >
                 {subitem.name}
               </Link>

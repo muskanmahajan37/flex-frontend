@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 // Router
-import { Route, Redirect } from "react-router-dom";
+import { Route, Redirect } from 'react-router-dom';
 
 // Redux
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
 const ProtectedRoute = ({ component: Component, isAuthenticated, ...rest }) => {
   return (
@@ -17,7 +17,7 @@ const ProtectedRoute = ({ component: Component, isAuthenticated, ...rest }) => {
           ) : (
             <Redirect
               to={{
-                pathname: "/login",
+                pathname: '/login',
               }}
             />
           )
