@@ -32,7 +32,7 @@ const AuthHeader = ({ user, logout }) => {
       <Link to='/' className='logo'>
         FLEX
       </Link>
-      <Nav style={{ padding: 0 }} className='navbar ml-auto'>
+      <Nav style={{ padding: 0 }} className='ml-auto'>
         <Link to='/' className='link'>
           Home
         </Link>
