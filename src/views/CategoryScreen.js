@@ -46,7 +46,7 @@ const CategoryScreen = ({ location }) => {
           {subcategories.map((item) => (
             <ul className="subcategory-list" key={item.id}>
               <Link
-                to={`/${categoryName.toLowerCase()}/${item.name.toLowerCase()}`}
+                to={`/categories/${categoryName.toLowerCase()}/${item.name.toLowerCase()}`}
                 className="subcategory-name"
               >
                 {item.name}
@@ -67,6 +67,7 @@ const CategoryScreen = ({ location }) => {
                 <Service
                   key={item.id}
                   name={item.name}
+                  image={item.image}
                   description={item.description}
                   price={item.price}
                 />
