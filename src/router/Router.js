@@ -7,6 +7,7 @@ import RegisterScreen from "../views/RegisterScreen";
 import NotFoundScreen from "../views/NotFoundScreen";
 import CategoryScreen from "../views/CategoryScreen";
 import SubcategoryScreen from "../views/SubcategoryScreen";
+import ProfileScreen from "../views/ProfileScreen";
 
 // React-Router
 import { BrowserRouter, Switch, Route } from "react-router-dom";
@@ -18,7 +19,11 @@ const Router = () => (
       <Route path="/login" component={LoginScreen} />
       <Route path="/register" component={RegisterScreen} />
       <Route path="/categories/:category" exact component={CategoryScreen} />
-      <Route path="/categories/:category/:subcategory" component={SubcategoryScreen} />
+      <Route
+        path="/categories/:category/:subcategory"
+        component={SubcategoryScreen}
+      />
+      <Route path="/:user" exact component={ProfileScreen} />
       <Route path="*" component={NotFoundScreen} />
     </Switch>
   </BrowserRouter>
