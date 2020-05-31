@@ -41,7 +41,7 @@ const ProfileScreen = ({ match }) => {
                 alt={'Profile'}
                 className='current-user-image'
               />
-              <p className="current-user-username">{currentUser.username}</p>
+              <p className='current-user-username'>{currentUser.username}</p>
             </div>
           )}
           <div className='gigs-container'></div>
