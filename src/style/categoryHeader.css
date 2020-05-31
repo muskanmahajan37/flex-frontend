@@ -19,6 +19,10 @@ ul {
   color: #757575;
 }
 
+.parent-li:last-child .submenu {
+  right: 0;
+}
+
 .parent-li:hover {
   text-decoration: underline;
   text-decoration-color: #757575;
