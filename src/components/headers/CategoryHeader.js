@@ -15,7 +15,7 @@ const CategoryHeader = ({ categories }) => {
       {categories.map((item) => (
         <Link
           to={{
-            pathname: `/${item.name.toLowerCase()}`,
+            pathname: `/categories/${item.name.toLowerCase()}`,
             state: {
               categoryName: item.name,
               categoryDescription: item.description,
@@ -31,7 +31,7 @@ const CategoryHeader = ({ categories }) => {
             {item.subcategories.map((subitem) => (
               <Link
                 to={{
-                  pathname: `/${item.name.toLowerCase()}/${subitem.name.toLowerCase()}`,
+                  pathname: `/categories/${item.name.toLowerCase()}/${subitem.name.toLowerCase()}`,
                   state: {
                     subcategoryId: subitem.id,
                   },
