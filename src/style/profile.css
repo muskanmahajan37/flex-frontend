@@ -24,13 +24,6 @@
   border-radius: 1px;
 }
 
-.gigs-container {
-  height: 75vh;
-  width: 55vw;
-  border: 1px solid #bababa;
-  border-radius: 1px;
-}
-
 .current-user-image {
   margin-top: 15%;
   border-radius: 50%;
@@ -39,4 +32,23 @@
 .current-user-username {
   margin-top: 5%;
   font-weight: bold;
+}
+
+.gigs-container {
+  height: 75vh;
+  width: 55vw;
+  border: 1px solid #bababa;
+  border-radius: 1px;
+}
+
+.gigs-header {
+  height: 10vh;
+  width: 100%;
+  border: 0px;
+  border-bottom: 0.5px solid #bababa;
+  line-height: 10vh;
+}
+
+.gigs-header p {
+  margin-left: 5%;
 }
