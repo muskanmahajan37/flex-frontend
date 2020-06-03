@@ -9,6 +9,7 @@ import Header from '../components/headers/Header';
 import CategoryHeader from '../components/headers/CategoryHeader';
 import Loader from '../components/Loader';
 import Service from '../components/service-components/Service';
+import Paginate from '../components/Pagination';
 
 // React-router
 import { Link } from 'react-router-dom';
@@ -16,6 +17,8 @@ import { Link } from 'react-router-dom';
 const CategoryScreen = ({ location }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(9);
   const { state } = location;
   const {
     categoryId,
@@ -35,6 +38,14 @@ const CategoryScreen = ({ location }) => {
     };
     fetchServices();
   }, [categoryId]);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
     <div className='parent'>
@@ -62,17 +73,25 @@ const CategoryScreen = ({ location }) => {
               <Loader msg='Loading services' format='medium' />
             </div>
           ) : (
-            <div className='inner-service-container'>
-              {data.map((item) => (
-                <Service
-                  key={item.id}
-                  name={item.name}
-                  username={item.username}
-                  image={item.image}
-                  price={item.price}
-                />
-              ))}
-            </div>
+            <>
+              <div className='inner-service-container'>
+                {currentItems.map((item) => (
+                  <Service
+                    key={item.id}
+                    name={item.name}
+                    username={item.username}
+                    image={item.image}
+                    price={item.price}
+                  />
+                ))}
+              </div>
+              <Paginate
+                currentPage={currentPage}
+                itemsPerPage={itemsPerPage}
+                totalItems={data.length}
+                paginate={paginate}
+              />
+            </>
           )}
         </div>
       </div>
