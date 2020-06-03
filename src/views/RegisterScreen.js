@@ -91,10 +91,10 @@ const RegisterScreen = ({ registerAPI, isAuthenticated }) => {
                     onChange={(e) => setUsername(e.target.value)}
                   />
                 </Form.Group>
-                {errors.name && errors.name.type === 'required' ? (
+                {errors.username && errors.username.type === 'required' ? (
                   <p className='error-message'>This field is required</p>
-                ) : errors.name && errors.name.type === 'minLength' ? (
-                  <p className='error-message'>Enter a valid name</p>
+                ) : errors.username && errors.username.type === 'minLength' ? (
+                  <p className='error-message'>Enter a valid username</p>
                 ) : (
                   <p className='hidden-message'>!</p>
                 )}
