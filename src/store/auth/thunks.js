@@ -12,14 +12,18 @@ import axios from 'axios';
 
 export const register = ({
   name,
+  username,
   email,
   password,
   password_confirmation,
 }) => async (dispatch) => {
-  dispatch(registerRequest({ name, email, password, password_confirmation }));
+  dispatch(
+    registerRequest({ name, username, email, password, password_confirmation })
+  );
   try {
     const body = JSON.stringify({
       name,
+      username,
       email,
       password,
       password_confirmation,

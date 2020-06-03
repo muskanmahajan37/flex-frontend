@@ -18,6 +18,7 @@ import { useForm } from 'react-hook-form';
 
 const RegisterScreen = ({ registerAPI, isAuthenticated }) => {
   const [name, setName] = useState(null);
+  const [username, setUsername] = useState(null);
   const [email, setEmail] = useState(null);
   const [password, setPassowrd] = useState(null);
   const [confirmPassword, setConfirmPassword] = useState(null);
@@ -27,6 +28,7 @@ const RegisterScreen = ({ registerAPI, isAuthenticated }) => {
   const handleRegister = () => {
     const newUser = {
       name,
+      username,
       email,
       password,
       password_confirmation: confirmPassword,
@@ -68,6 +70,25 @@ const RegisterScreen = ({ registerAPI, isAuthenticated }) => {
                     placeholder='Name'
                     className='custom-input'
                     onChange={(e) => setName(e.target.value)}
+                  />
+                </Form.Group>
+                {errors.name && errors.name.type === 'required' ? (
+                  <p className='error-message'>This field is required</p>
+                ) : errors.name && errors.name.type === 'minLength' ? (
+                  <p className='error-message'>Enter a valid name</p>
+                ) : (
+                  <p className='hidden-message'>!</p>
+                )}
+                <Form.Group controlId='username'>
+                  <input
+                    name='username'
+                    ref={register({
+                      required: true,
+                      minLength: 3,
+                    })}
+                    placeholder='username'
+                    className='custom-input2'
+                    onChange={(e) => setUsername(e.target.value)}
                   />
                 </Form.Group>
                 {errors.name && errors.name.type === 'required' ? (
