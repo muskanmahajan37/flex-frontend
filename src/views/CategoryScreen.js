@@ -77,6 +77,7 @@ const CategoryScreen = ({ location }) => {
               <div className='inner-service-container'>
                 {currentItems.map((item) => (
                   <Service
+                    id={item.id}
                     key={item.id}
                     name={item.name}
                     username={item.username}
