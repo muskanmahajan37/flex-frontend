@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import StripeCheckout from 'react-stripe-checkout';
 
 // Styling
 import '../style/service.css';
@@ -19,6 +20,13 @@ const ServiceScreen = ({ location: { state }, token }) => {
   const [service, setService] = useState({});
   const [loading, setLoading] = useState(false);
   const { id, username } = state;
+
+  const makePayment = async (token) => {
+    await axios.post('http://localhost:8004/payment', {
+      token,
+      service,
+    });
+  };
 
   useEffect(() => {
     const fetchService = async () => {
@@ -55,7 +63,20 @@ const ServiceScreen = ({ location: { state }, token }) => {
               className='current-service-image'
             />
           </div>
-          <div className='gig-right-container'></div>
+          <div className='gig-right-container'>
+            <div className='container'>
+              <div>
+                <p>{service.description}</p>
+                <p>€{service.price}</p>
+                <StripeCheckout
+                  stripeKey={process.env.REACT_APP_STRIPE_KEY}
+                  token={makePayment}
+                  name={`Buy ${service.name}`}
+                  amount={service.price * 100}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>
