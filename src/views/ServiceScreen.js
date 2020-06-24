@@ -22,7 +22,7 @@ const ServiceScreen = ({ location: { state }, token }) => {
   const { id, username } = state;
 
   const makePayment = async (token) => {
-    await axios.post('http://localhost:8004/payment', {
+    await axios.post('http://localhost:8002/payments', {
       token,
       service,
     });
