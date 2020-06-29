@@ -33,7 +33,9 @@ const CategoryHeader = ({ categories }) => {
                 to={{
                   pathname: `/categories/${item.name.toLowerCase()}/${subitem.name.toLowerCase()}`,
                   state: {
-                    subcategoryId: subitem.id,
+                    categoryId: item.id,
+                    categoryName: item.name,
+                    categoryDescription: item.description,
                   },
                 }}
                 key={subitem.id}
