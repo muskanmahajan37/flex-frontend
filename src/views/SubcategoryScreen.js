@@ -17,19 +17,19 @@ const SubcategoryScreen = ({ location }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(9);
   const { state } = location;
-  const { categoryId, categoryName, categoryDescription } = state;
+  const { categoryName, categoryDescription, subcategoryID } = state;
 
   useEffect(() => {
     const fetchServices = async () => {
       setLoading(true);
       const res = await axios.get(
-        `http://localhost:8000/subcategories/${categoryId}/services`
+        `http://localhost:8000/subcategories/${subcategoryID}/services`
       );
       setData(res.data);
       setLoading(false);
     };
     fetchServices();
-  }, [categoryId]);
+  }, [subcategoryID]);
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -38,8 +38,6 @@ const SubcategoryScreen = ({ location }) => {
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
-
-  console.log(data);
 
   return (
     <div className='parent'>
