@@ -36,6 +36,7 @@ const CategoryHeader = ({ categories }) => {
                     categoryId: item.id,
                     categoryName: item.name,
                     categoryDescription: item.description,
+                    subcategoryID: subitem.id,
                   },
                 }}
                 key={subitem.id}

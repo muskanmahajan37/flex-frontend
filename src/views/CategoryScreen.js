@@ -63,6 +63,7 @@ const CategoryScreen = ({ location }) => {
                     categoryId,
                     categoryName,
                     categoryDescription,
+                    subcategoryID: item.id,
                   },
                 }}
                 className='subcategory-name'
