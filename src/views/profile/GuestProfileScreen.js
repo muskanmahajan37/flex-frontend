@@ -11,9 +11,11 @@ import Loader from '../../components/Loader';
 
 // Redux
 import { connect } from 'react-redux';
+import Card from 'react-bootstrap/Card';
 
 const GuestProfileScreen = ({ match }) => {
   const [currentUser, setUser] = useState({});
+  const [userServices, setUserServices] = useState([]);
   const [loading, setLoading] = useState(false);
   const { params } = match;
   const { user } = params;
@@ -26,6 +28,17 @@ const GuestProfileScreen = ({ match }) => {
     };
     fetchUserByID();
   }, [user]);
+
+  useEffect(() => {
+    const fetchServicesByUser = async () => {
+      setLoading(true);
+      await axios
+        .get(`/users/${currentUser.id}/services`)
+        .then((res) => setUserServices(res.data));
+      setLoading(false);
+    };
+    currentUser.id && fetchServicesByUser();
+  }, [currentUser]);
 
   return (
     <div className='parent'>
@@ -50,6 +63,24 @@ const GuestProfileScreen = ({ match }) => {
           <div className='gigs-container'>
             <div className='gigs-header'>
               <p>{currentUser.username}'s services</p>
+            </div>
+            <div className='gigs-services-container'>
+              {loading ? (
+                <div className='center-container'>
+                  <Loader />
+                </div>
+              ) : userServices.length == 0 ? (
+                <div className='center-container'>
+                  <h1>This user has no services</h1>
+                </div>
+              ) : (
+                userServices.map((service) => (
+                  <Card>
+                    <Card.Img src={`http://localhost:8000/${service.image}`} />
+                    <Card.Text>{service.title}</Card.Text>
+                  </Card>
+                ))
+              )}
             </div>
           </div>
         </div>

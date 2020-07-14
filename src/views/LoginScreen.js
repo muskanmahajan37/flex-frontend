@@ -92,6 +92,7 @@ const LoginScreen = ({ login, isAuthenticated }) => {
     </div>
   );
 };
+
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
 });

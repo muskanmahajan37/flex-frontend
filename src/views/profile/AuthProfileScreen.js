@@ -10,9 +10,15 @@ import Loader from '../../components/Loader';
 
 // Redux
 import { connect } from 'react-redux';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
-const AuthProfileScreen = ({ match }) => {
+// React-router
+import { Link } from 'react-router-dom';
+
+const AuthProfileScreen = ({ match, userId }) => {
   const [currentUser, setCurrentUser] = useState({});
+  const [userServices, setUserServices] = useState([]);
   const [loading, setLoading] = useState(false);
   const { params } = match;
   const { user } = params;
@@ -20,13 +26,24 @@ const AuthProfileScreen = ({ match }) => {
   useEffect(() => {
     const fetchUserByID = async () => {
       setLoading(true);
-      await axios
-        .get(`/profile/${user}`)
-        .then((res) => setCurrentUser(res.data));
+      await axios.get(`/profile/${user}`).then((res) => {
+        setCurrentUser(res.data);
+      });
       setLoading(false);
     };
     fetchUserByID();
   }, [user]);
+
+  useEffect(() => {
+    const fetchServicesByUser = async () => {
+      setLoading(true);
+      await axios
+        .get(`/users/${currentUser.id}/services`)
+        .then((res) => setUserServices(res.data));
+      setLoading(false);
+    };
+    currentUser.id && fetchServicesByUser();
+  }, [currentUser]);
 
   return (
     <div className='parent'>
@@ -51,6 +68,53 @@ const AuthProfileScreen = ({ match }) => {
             <div className='gigs-header'>
               <p>Active services</p>
             </div>
+            <div className='gigs-services-container'>
+              {currentUser.id == userId ? (
+                loading ? (
+                  <div className='center-container'>
+                    <Loader />
+                  </div>
+                ) : userServices.length == 0 ? (
+                  <div className='center-container'>
+                    <h1 className='center-container-description'>
+                      You don't have any services! Add some
+                    </h1>
+                    <Link to={`/${user}/services/new`}>
+                      <Button
+                        className='center-container-button'
+                        variant='success'
+                      >
+                        Add service
+                      </Button>
+                    </Link>
+                  </div>
+                ) : (
+                  userServices.map((service) => (
+                    <Card>
+                      <Card.Img
+                        src={`http://localhost:8000/${service.image}`}
+                      />
+                      <Card.Text>{service.title}</Card.Text>
+                    </Card>
+                  ))
+                )
+              ) : loading ? (
+                <div className='center-container'>
+                  <Loader />
+                </div>
+              ) : userServices.length == 0 ? (
+                <div className='center-container'>
+                  <h1>This user has no services</h1>
+                </div>
+              ) : (
+                userServices.map((service) => (
+                  <Card>
+                    <Card.Img src={`http://localhost:8000/${service.image}`} />
+                    <Card.Text>{service.title}</Card.Text>
+                  </Card>
+                ))
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -60,6 +124,7 @@ const AuthProfileScreen = ({ match }) => {
 
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
+  userId: state.auth.user.id,
 });
 
 export default connect(mapStateToProps)(AuthProfileScreen);

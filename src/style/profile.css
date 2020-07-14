@@ -52,3 +52,22 @@
 .gigs-header p {
   margin-left: 5%;
 }
+
+.gigs-services-container {
+  width: 100%;
+  height: 100%;
+}
+
+.center-container {
+  width: 100%;
+  height: 80%;
+  text-align: center;
+}
+
+.center-container-description {
+  margin-top: 15%;
+}
+
+.center-container-button {
+  margin-top: 24px;
+}
