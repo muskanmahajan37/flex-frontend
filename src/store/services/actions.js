@@ -2,7 +2,7 @@ import {
   FETCH_SERVICES_REQUEST,
   FETCH_SERVICES_SUCCESS,
   FETCH_SERVICES_FAIL,
-} from "../types";
+} from '../types';
 
 export const fetchServicesRequest = (payload) => ({
   type: FETCH_SERVICES_REQUEST,

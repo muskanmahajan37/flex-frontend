@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 
 // Styling
-import "../../style/home.css";
+import '../../style/home.css';
 
 // Components
-import Header from "../../components/headers/Header";
-import CategoryHeader from "../../components/headers/CategoryHeader";
+import Header from '../../components/headers/Header';
+import CategoryHeader from '../../components/headers/CategoryHeader';
 
 // Redux
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
 const AuthHomeScreen = ({ userId }) => {
   return (
-    <div className="parent">
+    <div className='parent'>
       <Header />
       <CategoryHeader />
     </div>

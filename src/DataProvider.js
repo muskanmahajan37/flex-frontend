@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
 // Redux
-import { fetchServices } from "./store/services/thunks";
-import { fetchCategories } from "./store/categories/thunks";
-import { useDispatch } from "react-redux";
-import myStore from "./store/store";
+import { fetchServices } from './store/services/thunks';
+import { fetchCategories } from './store/categories/thunks';
+import { useDispatch } from 'react-redux';
+import myStore from './store/store';
 
 const DataProvider = ({ children }) => {
   const { store } = myStore();

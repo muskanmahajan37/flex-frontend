@@ -3,61 +3,63 @@ body,
 * {
   margin: 0;
   padding: 0;
-  font-family: "Brandon Grotesque Thin";
+  font-family: 'Montserrat-Regular';
+}
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css');
+
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url('../assets/fonts/Montserrat-Light.ttf');
 }
 
 @font-face {
-  font-family: "Brandon Grotesque Regular";
-  src: url("../assets/fonts/Brandon_reg.woff");
+  font-family: 'Montserrat-Regular';
+  src: url('../assets/fonts/Montserrat-Regular.ttf');
 }
 
 @font-face {
-  font-family: "Brandon Grotesque Thin";
-  src: url("../assets/fonts/Brandon_thin.woff");
+  font-family: 'Montserrat-Medium';
+  src: url('../assets/fonts/Montserrat-Medium.ttf');
 }
 
 @font-face {
-  font-family: "Brandon Grotesque Light";
-  src: url("../assets/fonts/Brandon_light.woff");
+  font-family: 'Montserrat-SemiBold';
+  src: url('../assets/fonts/Montserrat-SemiBold.ttf');
 }
 
-@font-face {
-  font-family: "Brandon Grotesque Bold";
-  src: url("../assets/fonts/Brandon_bld.woff");
+.my-loader {
+  text-align: center;
 }
 
-@font-face {
-  font-family: "Brandon Grotesque Black";
-  src: url("../assets/fonts/Brandon_blk.woff");
-}
-
-.navbar {
-  background-color: white;
-}
-
-.link {
-  color: black;
-  font-size: 18px;
-  transition: all 0.2s ease;
-}
-
-.link:not(:last-child) {
-  margin-right: 1vw;
-}
-
-.link:hover {
+.green {
   color: #1cbe88;
-  text-decoration: none;
-  cursor: pointer;
 }
 
-.logo {
-  color: black;
-  font-size: 1.4rem;
-  font-weight: bolder;
+.tiny {
+  font-size: 0.5rem;
 }
 
-.logo:hover {
-  text-decoration: none;
-  color: black;
+.little {
+  font-size: 1rem;
+}
+
+.little p {
+  font-size: 0.75rem;
+}
+
+.medium {
+  font-size: 2rem;
+}
+
+.medium p {
+  font-size: 1.25rem;
+}
+
+.large {
+  font-size: 5rem;
+}
+
+.large p {
+  font-size: 1.5rem;
 }

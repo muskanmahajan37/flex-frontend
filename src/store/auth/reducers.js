@@ -6,7 +6,7 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
   LOGOUT,
-} from "../types";
+} from '../types';
 
 const initialState = {
   token: null,

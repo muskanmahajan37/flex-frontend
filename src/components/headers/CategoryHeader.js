@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 
 // Styling
-import "../../style/categoryHeader.css";
+import '../../style/categoryHeader.css';
 
 // Redux
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
 // React-router
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const CategoryHeader = ({ categories }) => {
   return (
@@ -15,27 +15,32 @@ const CategoryHeader = ({ categories }) => {
       {categories.map((item) => (
         <Link
           to={{
-            pathname: `/${item.name.toLowerCase()}`,
+            pathname: `/categories/${item.name.toLowerCase()}`,
             state: {
+              categoryName: item.name,
+              categoryDescription: item.description,
               categoryId: item.id,
-              subcategories: item.subcategories
+              subcategories: item.subcategories,
             },
           }}
           key={item.id}
-          className="parent-li"
+          className='parent-li'
         >
           {item.name}
-          <ul className="submenu">
+          <ul className='submenu'>
             {item.subcategories.map((subitem) => (
               <Link
                 to={{
-                  pathname: `/${item.name.toLowerCase()}/${subitem.name.toLowerCase()}`,
+                  pathname: `/categories/${item.name.toLowerCase()}/${subitem.name.toLowerCase()}`,
                   state: {
-                    subcategoryId: subitem.id,
+                    categoryId: item.id,
+                    categoryName: item.name,
+                    categoryDescription: item.description,
+                    subcategoryID: subitem.id,
                   },
                 }}
                 key={subitem.id}
-                className="subitem"
+                className='subitem'
               >
                 {subitem.name}
               </Link>
