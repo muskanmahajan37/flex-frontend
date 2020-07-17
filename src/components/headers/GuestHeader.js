@@ -16,7 +16,7 @@ const GuestHeader = () => {
         <Link to='/' className='link'>
           Home
         </Link>
-        <Link to='/login' className='link'>
+        <Link to='/login' className='link' id="login">
           Sign In
         </Link>
         <Link to='/register' className='register-link'>
