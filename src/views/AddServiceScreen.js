@@ -6,8 +6,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import Header from '../components/headers/Header';
 import Form from 'react-bootstrap/Form';
 
-// React-hook-form (used for validation)
+// React-hook-form
 import { useForm } from 'react-hook-form';
+
+// Redux
 import { connect } from 'react-redux';
 
 const AddServiceScreen = ({ categories, userId, username, token }) => {
@@ -38,7 +40,7 @@ const AddServiceScreen = ({ categories, userId, username, token }) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    if (res.status == 200) {
+    if (res.status === 200) {
       toast.success('Service created successfully', {
         style: { backgroundColor: '#1cbe88' },
       });
@@ -72,6 +74,7 @@ const AddServiceScreen = ({ categories, userId, username, token }) => {
           <img
             src={imagePlaceholder}
             style={{ height: '60%', width: '100%', objectFit: 'contain' }}
+            alt=''
           />
         </div>
         <div style={{ width: '70%', marginLeft: 20 }}>
@@ -111,7 +114,7 @@ const AddServiceScreen = ({ categories, userId, username, token }) => {
                 custom
               >
                 {categories
-                  .filter((c) => c.id == selectedCategory)[0]
+                  .filter((c) => c.id === selectedCategory)[0]
                   .subcategories.map((item) => (
                     <option key={item.id} value={item.id}>
                       {item.name}

@@ -69,7 +69,7 @@ const GuestProfileScreen = ({ match }) => {
                 <div className='center-container'>
                   <Loader />
                 </div>
-              ) : userServices.length == 0 ? (
+              ) : userServices.length === 0 ? (
                 <div className='center-container'>
                   <h1>This user has no services</h1>
                 </div>
