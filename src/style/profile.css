@@ -71,3 +71,14 @@
 .center-container-button {
   margin-top: 24px;
 }
+
+.edit-profile-button {
+  padding: 10px 50px;
+  color: white;
+  background-color: #1cbe88;
+}
+
+.edit-profile-button:hover {
+  color: white;
+  text-decoration: none;
+}

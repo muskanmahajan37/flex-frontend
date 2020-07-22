@@ -16,41 +16,59 @@ import Button from 'react-bootstrap/Button';
 // React-router
 import { Link } from 'react-router-dom';
 
-const AuthProfileScreen = ({ match, userId }) => {
+const AuthProfileScreen = ({ match, loggedInUser }) => {
   const [currentUser, setCurrentUser] = useState({});
   const [userServices, setUserServices] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [userLoading, setUserLoading] = useState(false);
+  const [servicesLoading, setServicesLoading] = useState(false);
   const { params } = match;
   const { user } = params;
 
   useEffect(() => {
     const fetchUserByID = async () => {
-      setLoading(true);
+      setUserLoading(true);
       await axios.get(`/profile/${user}`).then((res) => {
         setCurrentUser(res.data);
       });
-      setLoading(false);
+      setUserLoading(false);
     };
-    fetchUserByID();
-  }, [user]);
+    user !== loggedInUser.username && fetchUserByID();
+  }, [user, loggedInUser]);
 
   useEffect(() => {
     const fetchServicesByUser = async () => {
-      setLoading(true);
+      setServicesLoading(true);
       await axios
-        .get(`/users/${currentUser.id}/services`)
+        .get(`/users/${loggedInUser.id}/services`)
         .then((res) => setUserServices(res.data));
-      setLoading(false);
+      setServicesLoading(false);
     };
-    currentUser.id && fetchServicesByUser();
-  }, [currentUser]);
+    fetchServicesByUser();
+  }, [currentUser, loggedInUser]);
 
   return (
     <div className='parent'>
       <Header />
       <div className='hero'>
         <div className='parent-wrapper'>
-          {loading ? (
+          {user === loggedInUser.username ? (
+            <div className='profile-container'>
+              <img
+                src={`/user/${loggedInUser.image}`}
+                alt={'Profile'}
+                className='current-user-image'
+              />
+              <p className='current-user-username'>{loggedInUser.username}</p>
+              <Link
+                to={{
+                  pathname: `/${loggedInUser.username}/profile/edit`,
+                }}
+                className='edit-profile-button'
+              >
+                Edit profile
+              </Link>
+            </div>
+          ) : userLoading ? (
             <div className='profile-container-loading'>
               <Loader format='medium' msg='Loading' />
             </div>
@@ -69,12 +87,12 @@ const AuthProfileScreen = ({ match, userId }) => {
               <p>Active services</p>
             </div>
             <div className='gigs-services-container'>
-              {currentUser.id == userId ? (
-                loading ? (
-                  <div className='center-container'>
-                    <Loader />
-                  </div>
-                ) : userServices.length == 0 ? (
+              {servicesLoading ? (
+                <div className='center-container'>
+                  <Loader />
+                </div>
+              ) : userServices.length === 0 ? (
+                currentUser.id === loggedInUser.id ? (
                   <div className='center-container'>
                     <h1 className='center-container-description'>
                       You don't have any services! Add some
@@ -89,26 +107,13 @@ const AuthProfileScreen = ({ match, userId }) => {
                     </Link>
                   </div>
                 ) : (
-                  userServices.map((service) => (
-                    <Card>
-                      <Card.Img
-                        src={`http://localhost:8000/${service.image}`}
-                      />
-                      <Card.Text>{service.title}</Card.Text>
-                    </Card>
-                  ))
+                  <div className='center-container'>
+                    <h1>This user has no services</h1>
+                  </div>
                 )
-              ) : loading ? (
-                <div className='center-container'>
-                  <Loader />
-                </div>
-              ) : userServices.length == 0 ? (
-                <div className='center-container'>
-                  <h1>This user has no services</h1>
-                </div>
               ) : (
-                userServices.map((service) => (
-                  <Card>
+                userServices.map((service, index) => (
+                  <Card key={index}>
                     <Card.Img src={`http://localhost:8000/${service.image}`} />
                     <Card.Text>{service.title}</Card.Text>
                   </Card>
@@ -124,7 +129,7 @@ const AuthProfileScreen = ({ match, userId }) => {
 
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
-  userId: state.auth.user.id,
+  loggedInUser: state.auth.user,
 });
 
 export default connect(mapStateToProps)(AuthProfileScreen);

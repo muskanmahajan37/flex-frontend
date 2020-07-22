@@ -5,6 +5,9 @@ import {
   REGISTER_REQUEST,
   REGISTER_SUCCESS,
   REGISTER_FAIL,
+  EDIT_USER_REQUEST,
+  EDIT_USER_SUCCESS,
+  EDIT_USER_FAIL,
   LOGOUT,
 } from '../types';
 
@@ -59,6 +62,22 @@ export default (state = initialState, action) => {
         token: null,
         user: null,
         isAuthenticated: false,
+        isLoading: false,
+      };
+    case EDIT_USER_REQUEST:
+      return {
+        ...state,
+        isLoading: false,
+      };
+    case EDIT_USER_SUCCESS:
+      return {
+        ...state,
+        user: action.payload,
+        isLoading: false,
+      };
+    case EDIT_USER_FAIL:
+      return {
+        ...state,
         isLoading: false,
       };
     case LOGOUT:

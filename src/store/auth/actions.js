@@ -5,6 +5,9 @@ import {
   REGISTER_REQUEST,
   REGISTER_SUCCESS,
   REGISTER_FAIL,
+  EDIT_USER_REQUEST,
+  EDIT_USER_SUCCESS,
+  EDIT_USER_FAIL,
   LOGOUT,
 } from '../types';
 
@@ -34,6 +37,20 @@ export const registerSuccess = (payload) => ({
 
 export const registerFail = () => ({
   type: REGISTER_FAIL,
+});
+
+export const editUserRequest = (payload) => ({
+  type: EDIT_USER_REQUEST,
+  payload,
+});
+
+export const editUserSuccess = (payload) => ({
+  type: EDIT_USER_SUCCESS,
+  payload,
+});
+
+export const editUserFail = () => ({
+  type: EDIT_USER_FAIL,
 });
 
 export const logout = () => ({

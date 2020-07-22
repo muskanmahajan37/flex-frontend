@@ -10,6 +10,7 @@ import SubcategoryScreen from '../views/SubcategoryScreen';
 import ProfileScreen from '../views/ProfileScreen';
 import ServiceScreen from '../views/ServiceScreen';
 import AddServiceScreen from '../views/AddServiceScreen';
+import EditProfile from '../views/EditProfile';
 
 // React-Router
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
@@ -29,6 +30,7 @@ const Router = () => (
       <Route path='/:user' exact component={ProfileScreen} />
       <Route path='/:user/:service' exact component={ServiceScreen} />
       <Route path='/:user/services/new' exact component={AddServiceScreen} />
+      <Route path='/:user/profile/edit' exact component={EditProfile} />
       <Route path='*' component={NotFoundScreen} />
     </Switch>
   </BrowserRouter>

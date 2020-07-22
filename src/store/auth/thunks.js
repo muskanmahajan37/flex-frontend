@@ -1,14 +1,19 @@
 import {
-  registerRequest,
-  registerSuccess,
-  registerFail,
   loginRequest,
   loginSuccess,
   loginFail,
+  registerRequest,
+  registerSuccess,
+  registerFail,
+  editUserRequest,
+  editUserSuccess,
+  editUserFail,
   logout as logoutAPI,
 } from './actions';
 
 import axios from 'axios';
+
+const API_URL = 'http://localhost:8000';
 
 export const register = ({
   name,
@@ -28,7 +33,7 @@ export const register = ({
       password,
       password_confirmation,
     });
-    const res = await axios.post(`/register`, body, {
+    const res = await axios.post(`${API_URL}/register`, body, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -43,7 +48,7 @@ export const login = ({ email, password }) => async (dispatch) => {
   dispatch(loginRequest({ email, password }));
   try {
     const body = JSON.stringify({ email, password });
-    const res = await axios.post(`/login`, body, {
+    const res = await axios.post(`${API_URL}/login`, body, {
       headers: {
         'Content-Type': 'application/json',
       },
@@ -51,6 +56,47 @@ export const login = ({ email, password }) => async (dispatch) => {
     dispatch(loginSuccess(res.data));
   } catch (error) {
     dispatch(loginFail());
+    throw error;
+  }
+};
+
+export const editUser = ({ name, username, email, image }) => async (
+  dispatch,
+  getState
+) => {
+  const token = getState().auth.token;
+  const userId = getState().auth.user.id;
+
+  dispatch(editUserRequest({ name, username, email, image }));
+
+  const formData = new FormData();
+  formData.append('name', name);
+  formData.append('username', username);
+  formData.append('email', email);
+  formData.append('image', image.name);
+  formData.append('_method', 'PATCH');
+
+  try {
+    const res = await axios.post(`${API_URL}/users/${userId}`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const data = await res.data;
+
+    let final = {
+      id: data.user.id,
+      username: data.user.username,
+      email: data.user.email,
+      name: data.user.name,
+      image: data.user.image,
+    };
+
+    return dispatch(editUserSuccess(final));
+  } catch (error) {
+    dispatch(editUserFail());
+    console.log(error);
     throw error;
   }
 };
