@@ -78,7 +78,7 @@ const EditProfile = ({ match, isAuthenticated, currentUser, editUser }) => {
           <div className='hero'>
             <div style={{ width: '30%' }}>
               <img
-                src={imagePlaceholder}
+                src={`http://localhost:8000/user/john-doe.jpg`}
                 style={{ height: '60%', width: '100%', objectFit: 'contain' }}
                 alt=''
               />

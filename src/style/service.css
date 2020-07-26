@@ -63,10 +63,17 @@
 .service-image {
   height: 30vh;
   width: 100%;
+  border: 2px solid #F3F3F3;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 1.5px 1.5px 1.5px lightslategray;
 }
 
 .service-details-container {
   padding-left: 2.5%;
+  margin-left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
   width: 90%;
 }
 
