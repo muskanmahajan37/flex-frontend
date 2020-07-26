@@ -6,10 +6,10 @@ import '../../style/home.css';
 // Components
 import Header from '../../components/headers/Header';
 import CategoryHeader from '../../components/headers/CategoryHeader';
+import Footer from "../../components/headers/Footer";
 import Card from '../../components/Card';
 import Paginate from '../../components/Pagination';
 import Service from '../../components/service-components/Service';
-
 // Redux
 import { connect } from 'react-redux';
 
@@ -93,7 +93,11 @@ const GuestHomeScreen = ({ services }) => {
           totalItems={services.length}
           paginate={paginate}
         />
+          <div>
+              <Footer/>
+          </div>
       </div>
+
     </div>
   );
 };

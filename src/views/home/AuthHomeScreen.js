@@ -8,7 +8,7 @@ import Header from '../../components/headers/Header';
 import CategoryHeader from '../../components/headers/CategoryHeader';
 import Paginate from '../../components/Pagination';
 import Service from '../../components/service-components/Service';
-
+import Footer from '../../components/headers/Footer';
 // Redux
 import { connect } from 'react-redux';
 
@@ -46,7 +46,11 @@ const AuthHomeScreen = ({ services }) => {
         totalItems={services.length}
         paginate={paginate}
       />
+        <div>
+            <Footer/>
+        </div>
     </div>
+
   );
 };
 

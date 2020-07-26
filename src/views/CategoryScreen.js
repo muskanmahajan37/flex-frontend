@@ -7,6 +7,7 @@ import '../style/service.css';
 // Components
 import Header from '../components/headers/Header';
 import CategoryHeader from '../components/headers/CategoryHeader';
+import Footer from '../components/headers/Footer';
 import Loader from '../components/Loader';
 import Service from '../components/service-components/Service';
 import Paginate from '../components/Pagination';
@@ -102,9 +103,21 @@ const CategoryScreen = ({ location }) => {
               />
             </>
           )}
+
+        </div>
+
+
+      </div>
+      <div className={'footer'}>
+        <div className={'Foot'}>
+          <Footer/>
+
         </div>
       </div>
+
     </div>
+
+
   );
 };
 

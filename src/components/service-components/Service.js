@@ -33,6 +33,7 @@ const Service = ({ id, name, username, onClick, price, image }) => {
         <p className='service-name'>{name}</p>
         <p className='service-price'>€{price}</p>
       </div>
+
     </Link>
   );
 };
