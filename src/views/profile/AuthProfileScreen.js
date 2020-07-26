@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 // Styling
-import '../../style/profile.css';
+import "../../style/profile.css";
 
 // Components
-import Header from '../../components/headers/Header';
-import Loader from '../../components/Loader';
+import Header from "../../components/headers/Header";
+import Loader from "../../components/Loader";
 
 // Redux
-import { connect } from 'react-redux';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import { connect } from "react-redux";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 // React-router
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const AuthProfileScreen = ({ match, loggedInUser }) => {
   const [currentUser, setCurrentUser] = useState({});
@@ -47,74 +47,76 @@ const AuthProfileScreen = ({ match, loggedInUser }) => {
   }, [currentUser, loggedInUser]);
 
   return (
-    <div className='parent'>
+    <div className="parent">
       <Header />
-      <div className='hero'>
-        <div className='parent-wrapper'>
+      <div className="hero">
+        <div className="parent-wrapper">
           {user === loggedInUser.username ? (
-            <div className='profile-container'>
+            <div className="profile-container">
               <img
                 src={`/user/${loggedInUser.image}`}
-                alt={'Profile'}
-                className='current-user-image'
+                alt={"Profile"}
+                className="current-user-image"
               />
-              <p className='current-user-username'>{loggedInUser.username}</p>
+              <p className="current-user-username">{loggedInUser.username}</p>
               <Link
                 to={{
                   pathname: `/${loggedInUser.username}/profile/edit`,
                 }}
-                className='edit-profile-button'
+                className="edit-profile-button"
               >
                 Edit profile
               </Link>
             </div>
           ) : userLoading ? (
-            <div className='profile-container-loading'>
-              <Loader format='medium' msg='Loading' />
+            <div className="profile-container-loading">
+              <Loader format="medium" msg="Loading" />
             </div>
           ) : (
-            <div className='profile-container'>
+            <div className="profile-container">
               <img
                 src={`/user/${currentUser.image}`}
-                alt={'Profile'}
-                className='current-user-image'
+                alt={"Profile"}
+                className="current-user-image"
               />
-              <p className='current-user-username'>{currentUser.username}</p>
+              <p className="current-user-username">{currentUser.username}</p>
             </div>
           )}
-          <div className='gigs-container'>
-            <div className='gigs-header'>
+          <div className="gigs-container">
+            <div className="gigs-header">
               <p>Active services</p>
             </div>
-            <div className='gigs-services-container'>
+            <div className="gigs-services-container">
               {servicesLoading ? (
-                <div className='center-container'>
+                <div className="center-container">
                   <Loader />
                 </div>
               ) : userServices.length === 0 ? (
                 currentUser.id === loggedInUser.id ? (
-                  <div className='center-container'>
-                    <h1 className='center-container-description'>
+                  <div className="center-container">
+                    <h1 className="center-container-description">
                       You don't have any services! Add some
                     </h1>
                     <Link to={`/${user}/services/new`}>
                       <Button
-                        className='center-container-button'
-                        variant='success'
+                        className="center-container-button"
+                        variant="success"
                       >
                         Add service
                       </Button>
                     </Link>
                   </div>
                 ) : (
-                  <div className='center-container'>
+                  <div className="center-container">
                     <h1>This user has no services</h1>
                   </div>
                 )
               ) : (
                 userServices.map((service, index) => (
                   <Card key={index}>
-                    <Card.Img src={`http://localhost:8000/${service.image}`} />
+                    <Card.Img
+                      src={`http://localhost:8000/images/${service.image}`}
+                    />
                     <Card.Text>{service.title}</Card.Text>
                   </Card>
                 ))
