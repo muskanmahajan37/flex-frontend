@@ -93,9 +93,12 @@ const GuestHomeScreen = ({ services }) => {
           totalItems={services.length}
           paginate={paginate}
         />
-          <div>
-              <Footer/>
+        <div className={'footer-ro'}>
+          <div className={'Foot'}>
+            <Footer/>
           </div>
+        </div>
+
       </div>
 
     </div>

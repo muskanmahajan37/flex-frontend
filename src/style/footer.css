@@ -3,11 +3,13 @@
 .footer{
     margin-top: 500px;
 }
+
 .Foot {
     text-align: center;
     width: 100%;
     position: relative;
     margin-top: 50px;
+    padding-bottom: 20px;
     background-color: #fafafa;
     display: flex;
     align-items: center;
