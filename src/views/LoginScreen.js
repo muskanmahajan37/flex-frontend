@@ -19,15 +19,19 @@ import { useForm } from 'react-hook-form';
 const LoginScreen = ({ login, isAuthenticated }) => {
   const [email, setEmail] = useState(null);
   const [password, setPassowrd] = useState(null);
+  const [err, setErrors] = useState(null);
 
   const { register, handleSubmit, errors } = useForm();
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     const user = {
       email,
       password,
     };
-    login(user);
+    const res = await login(user);
+    if (res.type === 'LOGIN_FAIL') {
+      setErrors(true);
+    }
   };
 
   return (
@@ -49,7 +53,10 @@ const LoginScreen = ({ login, isAuthenticated }) => {
                     })}
                     placeholder='Email'
                     className='custom-input'
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      setErrors(null);
+                    }}
                   />
                 </Form.Group>
                 {errors.email && errors.email.type === 'required' ? (
@@ -66,7 +73,10 @@ const LoginScreen = ({ login, isAuthenticated }) => {
                     ref={register({ required: true })}
                     placeholder='Password'
                     className='custom-input2'
-                    onChange={(e) => setPassowrd(e.target.value)}
+                    onChange={(e) => {
+                      setPassowrd(e.target.value);
+                      setErrors(null);
+                    }}
                   />
                 </Form.Group>
                 {errors.password ? (
@@ -74,6 +84,7 @@ const LoginScreen = ({ login, isAuthenticated }) => {
                 ) : (
                   <p className='hidden-message'>!</p>
                 )}
+                {err && <p className='error-message'>Auth failed</p>}
                 <p className='forgot-password'>Forgot password?</p>
                 <button className='login-button' type='submit'>
                   Submit
