@@ -53,10 +53,9 @@ export const login = ({ email, password }) => async (dispatch) => {
         'Content-Type': 'application/json',
       },
     });
-    dispatch(loginSuccess(res.data));
+    return dispatch(loginSuccess(res.data));
   } catch (error) {
-    dispatch(loginFail());
-    throw error;
+    return dispatch(loginFail());
   }
 };
 
