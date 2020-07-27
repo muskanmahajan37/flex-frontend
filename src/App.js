@@ -11,6 +11,7 @@ import DataProvider from './DataProvider';
 import { Provider } from 'react-redux';
 import myStore from './store/store';
 import { PersistGate } from 'redux-persist/integration/react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const { store, persistor } = myStore();
 

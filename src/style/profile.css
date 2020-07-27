@@ -26,10 +26,10 @@
 }
 
 .current-user-image {
-  margin-top: 5%;
+  margin-top: 8%;
   border-radius: 50%;
-  height: 420px;
-  width: 420px;
+  height: 30%;
+  width: 70%;
 }
 
 .current-user-username {
