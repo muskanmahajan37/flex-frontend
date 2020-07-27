@@ -1,14 +1,14 @@
 
 
 .footer{
-    margin-top: 500px;
+    margin-top: 900px;
 }
 
 .Foot {
     text-align: center;
     width: 100%;
     position: relative;
-    margin-top: 50px;
+    margin-top: 100px;
     padding-bottom: 20px;
     background-color: #fafafa;
     display: flex;
@@ -92,6 +92,10 @@ a {
     }
     .icons {
         width: 100%;
+    }
+
+    footer{
+        height:auto;
     }
 
     #freelance {

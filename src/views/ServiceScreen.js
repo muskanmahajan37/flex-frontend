@@ -54,7 +54,7 @@ const ServiceScreen = ({ location: { state }, token }) => {
       ) : (
         <div className='gig-container'>
           <div className='gig-left-container'>
-            <h1>{service.name}</h1>
+            <h1 className='service-name-h1'>{service.name}</h1>
             <Link to={`/${username}`}>{service.username}</Link>
             <br />
             <img

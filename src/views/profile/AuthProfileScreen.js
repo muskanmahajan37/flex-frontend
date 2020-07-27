@@ -19,10 +19,15 @@ import { Link } from "react-router-dom";
 const AuthProfileScreen = ({ match, loggedInUser }) => {
   const [currentUser, setCurrentUser] = useState({});
   const [userServices, setUserServices] = useState([]);
+  const [userSkills, setUserSkills] = useState([]);
+  const [userEducation, setUserEducation] = useState([]);
+  const [userLanguage, setUserLanguage] = useState([]);
   const [userLoading, setUserLoading] = useState(false);
   const [servicesLoading, setServicesLoading] = useState(false);
   const { params } = match;
   const { user } = params;
+
+
 
   useEffect(() => {
     const fetchUserByID = async () => {
@@ -46,6 +51,40 @@ const AuthProfileScreen = ({ match, loggedInUser }) => {
     fetchServicesByUser();
   }, [currentUser, loggedInUser]);
 
+  useEffect(() => {
+    const fetchUserEducation = async () => {
+      setServicesLoading(true);
+      await axios
+          .get(`/users/${loggedInUser.id}/educations`)
+          .then((res) => setUserEducation(res.data));
+      setServicesLoading(false);
+    };
+    fetchUserEducation();
+  }, [currentUser, loggedInUser]);
+
+  useEffect(() => {
+    const fetchUserSkills = async () => {
+      setServicesLoading(true);
+      await axios
+          .get(`/users/${loggedInUser.id}/skills`)
+          .then((res) => setUserSkills(res.data));
+      setServicesLoading(false);
+    };
+    fetchUserSkills();
+  }, [currentUser, loggedInUser]);
+
+  useEffect(() => {
+    const fetchUserLanguage = async () => {
+      setServicesLoading(true);
+      await axios
+          .get(`/users/${loggedInUser.id}/languages`)
+          .then((res) => setUserLanguage(res.data));
+      setServicesLoading(false);
+    };
+    fetchUserLanguage();
+  }, [currentUser, loggedInUser]);
+
+
   return (
     <div className="parent">
       <Header />
@@ -67,6 +106,36 @@ const AuthProfileScreen = ({ match, loggedInUser }) => {
               >
                 Edit profile
               </Link>
+              <br/>
+              <hr className="hr-line"/>
+
+              <p className='education-text'>Skills</p>
+              <ul className="skill-list">
+                {userSkills.map(function(name, index){
+                  return <li
+                      key={ index }>{name.name}
+                  </li>;
+                })}
+              </ul>
+              <hr className='hr-line'/>
+              <p className='education-text'>Education</p>
+              <ul className="skill-list">
+                {userEducation.map(function(education, index){
+                  return <li
+                      key={ index }>{education.name}
+                  </li>;
+                })}
+              </ul>
+              <hr className='hr-line'/>
+              <p className='education-text'>Languages</p>
+              <ul className="skill-list">
+                {userLanguage.map(function(language, index){
+                  return <li
+                      key={ index }>{language.name}
+                  </li>;
+                })}
+              </ul>
+
             </div>
           ) : userLoading ? (
             <div className="profile-container-loading">
@@ -84,7 +153,7 @@ const AuthProfileScreen = ({ match, loggedInUser }) => {
           )}
           <div className="gigs-container">
             <div className="gigs-header">
-              <p>Active services</p>
+              <p className='active-services'>Active services</p>
             </div>
             <div className="gigs-services-container">
               {servicesLoading ? (
