@@ -73,6 +73,7 @@ const AddServiceScreen = ({categories, userId, username, token}) => {
             <div className='hero'>
                 <div style={{width: '30%'}}>
                     <img
+                        className="add-service-image"
                         src={imagePlaceholder}
                         style={{height: '60%', width: '100%', objectFit: 'contain', marginTop: "3%"}}
                         alt=''

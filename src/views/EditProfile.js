@@ -74,7 +74,7 @@ const EditProfile = ({ match, isAuthenticated, currentUser, editUser }) => {
             draggable
             pauseOnHover
           />
-          <h1 className="edit-profile-h1">Edit profile</h1>
+          <h1 className="edit-profile-h1">Edit your profile</h1>
           <hr className="hr-profile"/>
           <div className='hero'>
             <div style={{ width: '30%' }}>
