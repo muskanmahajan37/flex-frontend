@@ -74,17 +74,19 @@ const EditProfile = ({ match, isAuthenticated, currentUser, editUser }) => {
             draggable
             pauseOnHover
           />
-          <h1>Edit profile</h1>
+          <h1 className="edit-profile-h1">Edit profile</h1>
+          <hr className="hr-profile"/>
           <div className='hero'>
             <div style={{ width: '30%' }}>
               <img
                 src={`http://localhost:8000/user/john-doe.jpg`}
-                style={{ height: '60%', width: '100%', objectFit: 'contain' }}
+                style={{ objectFit: 'contain' }}
                 alt=''
+                className="user-profile-image"
               />
             </div>
-            <div style={{ width: '70%', marginLeft: 20 }}>
-              <Form onSubmit={handleSubmit(handleFormSubmit)}>
+            <div className="edit-form-div" style={{ width: '70%', marginLeft: 40 }}>
+              <Form  onSubmit={handleSubmit(handleFormSubmit)}>
                 <Form.Label>Name</Form.Label>
                 <Form.Group controlId='formBasicName'>
                   <Form.Control
@@ -151,6 +153,7 @@ const EditProfile = ({ match, isAuthenticated, currentUser, editUser }) => {
               </Form>
             </div>
           </div>
+          <hr className="end-form"/>
         </>
       ) : (
         <div className='flex'>
