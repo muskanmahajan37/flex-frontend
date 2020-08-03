@@ -107,6 +107,8 @@ const AuthProfileScreen = ({ match, loggedInUser }) => {
                 Edit profile
               </Link>
               <br/>
+              <br/>
+              <br/>
               <hr className="hr-line"/>
 
               <p className='education-text'>Skills</p>

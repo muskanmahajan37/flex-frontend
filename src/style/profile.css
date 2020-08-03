@@ -6,7 +6,7 @@
 }
 
 .profile-container {
-    height: 159vh;
+    height: 158vh;
     width: 29vw;
     text-align: center;
     border: 1px solid lightslategray;
@@ -137,13 +137,14 @@ img.card-img {
 
 .education-text {
     font-weight: 500;
+    margin: 0;
 }
 
 
 .hr-line {
     color: red;
-    background-color: #1CBE88;
-    height: 0.1px;
+    background-color: lightslategray;
+    height: 0.3px;
 }
 
 .edit-profile-button:hover {
@@ -152,13 +153,14 @@ img.card-img {
 }
 
 .user-profile-image {
-    height: 60%;
-    width: 100%;
+    height: 58%;
+    width: 95%;
     border: 0.1px solid black;
     border-radius: 25px;
-    background-color: ghostwhite;
-    padding: 6px 6px 6px 6px;
+    background-color: white;
+    padding: 3px ;
     margin-top: 5%;
+    box-shadow: 2px 2px 2px darkgray;
 }
 
 .edit-form-div{
@@ -172,6 +174,9 @@ img.card-img {
 
 .hr-profile{
   margin-bottom: 3.5%;
+    height: 1.5px;
+    background-color: #F2F2F2;
+
 }
 
 
