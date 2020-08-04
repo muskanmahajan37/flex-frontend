@@ -109,10 +109,6 @@ const AuthProfileScreen = ({ match, loggedInUser }) => {
               </Link>
               <br/>
               <br/>
-              <hr className="hr-line"/>
-              <p>Add new service</p>
-              <br/>
-
               <Link
                   to={{
                     pathname: `/create/services/new`,
@@ -122,7 +118,6 @@ const AuthProfileScreen = ({ match, loggedInUser }) => {
                 Create service
               </Link>
               <hr className="hr-line"/>
-
               <p className='education-text'>Skills</p>
               <ul className="skill-list">
                 {userSkills.map(function(name, index){
