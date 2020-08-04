@@ -115,14 +115,16 @@ img.card-img {
 }
 
 .edit-profile-button {
-  padding: 10px 50px;
-  color: white;
-  background-color: #1cbe88;
-}
-.service-profile-button {
+    justify-content: center;
     padding: 10px 50px;
     color: white;
-    background-color:   #D5D5D5;
+    background-color: #1cbe88;
+}
+.service-profile-button {
+    padding: 10px 38px;
+    color: white;
+    background-color:#1cbe88;
+    width: 200px;
 }
 .skill-list {
     width: 50px;
