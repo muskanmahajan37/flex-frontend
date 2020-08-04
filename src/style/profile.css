@@ -92,6 +92,8 @@ img.card-img {
 
 div.card {
     height: 500px;
+    display: flex;
+    justify-content: space-between;
     margin: 20px;
     margin-top: 40px;
     border: 1px solid gray;
@@ -117,7 +119,11 @@ img.card-img {
   color: white;
   background-color: #1cbe88;
 }
-
+.service-profile-button {
+    padding: 10px 50px;
+    color: white;
+    background-color:   #D5D5D5;
+}
 .skill-list {
     width: 50px;
     display: block;
