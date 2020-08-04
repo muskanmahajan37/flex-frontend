@@ -1,16 +1,12 @@
-
-
 .footer{
-    margin-top: 550px;
+    margin-top: 1200px;
 }
-
 .Foot {
-    padding-top: 40px;
     text-align: center;
     width: 100%;
     position: relative;
-    margin-top: 0px;
     padding-bottom: 20px;
+    padding-top: 30px;
     background-color: #fafafa;
     display: flex;
     align-items: center;
