@@ -6,7 +6,7 @@
 }
 
 .profile-container {
-    height: 159vh;
+    height: 156vh;
     width: 29vw;
     text-align: center;
     border: 1px solid lightslategray;
@@ -151,6 +151,8 @@ img.card-img {
 
 .education-text {
     font-weight: 500;
+    padding:0;
+    margin:0;
 }
 
 
