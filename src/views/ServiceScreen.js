@@ -8,6 +8,8 @@ import '../style/service.css';
 // Components
 import Header from '../components/headers/Header';
 import CategoryHeader from '../components/headers/CategoryHeader';
+import Footer from "../components/headers/Footer";
+
 import Loader from '../components/Loader';
 
 // Redux
@@ -79,6 +81,12 @@ const ServiceScreen = ({ location: { state }, token }) => {
           </div>
         </div>
       )}
+      <div className={'footer'}>
+        <div className={'Foot'}>
+          <Footer/>
+
+        </div>
+      </div>
     </div>
   );
 };

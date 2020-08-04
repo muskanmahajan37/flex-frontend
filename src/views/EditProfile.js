@@ -7,6 +7,7 @@ import '../style/profile.css';
 
 // Components
 import Header from '../components/headers/Header';
+import Footer from '../components/headers/Footer';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -157,7 +158,14 @@ const EditProfile = ({ match, isAuthenticated, currentUser, editUser }) => {
           <h1>401 Not authorized</h1>
         </div>
       )}
+      <div className={'footer'}>
+        <div className={'Foot'}>
+          <Footer/>
+
+        </div>
+      </div>
     </div>
+
   );
 };
 

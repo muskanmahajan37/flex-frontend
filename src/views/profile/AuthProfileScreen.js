@@ -8,6 +8,7 @@ import "../../style/profile.css";
 import Header from "../../components/headers/Header";
 import Loader from "../../components/Loader";
 
+
 // Redux
 import { connect } from "react-redux";
 import Card from "react-bootstrap/Card";
@@ -87,6 +88,7 @@ const AuthProfileScreen = ({ match, loggedInUser }) => {
               <p>Active services</p>
             </div>
             <div className="gigs-services-container">
+
               {servicesLoading ? (
                 <div className="center-container">
                   <Loader />
@@ -112,11 +114,14 @@ const AuthProfileScreen = ({ match, loggedInUser }) => {
                   </div>
                 )
               ) : (
+
                 userServices.map((service, index) => (
                   <Card key={index}>
-                    <Card.Img
-                      src={`http://localhost:8000/images/${service.image}`}
-                    />
+                    <div className={'s-services'}>
+                      <Card.Img
+                          src={`http://localhost:8000/images/${service.image}`}
+                      />
+                    </div>
                     <Card.Text>{service.title}</Card.Text>
                   </Card>
                 ))

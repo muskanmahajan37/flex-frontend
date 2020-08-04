@@ -11,6 +11,7 @@ import { useForm } from 'react-hook-form';
 
 // Redux
 import { connect } from 'react-redux';
+import Footer from "../components/headers/Footer";
 
 const AddServiceScreen = ({ categories, userId, username, token }) => {
   const [name, setName] = useState(null);
