@@ -115,7 +115,7 @@ const AuthProfileScreen = ({ match, loggedInUser }) => {
 
               <Link
                   to={{
-                    pathname: `/${loggedInUser.username}/create/services/new`,
+                    pathname: `/create/services/new`,
                   }}
                   className="service-profile-button"
               >
