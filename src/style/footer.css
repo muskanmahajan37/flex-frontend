@@ -95,6 +95,10 @@ a {
         width: 100%;
     }
 
+    footer{
+        height:auto;
+    }
+
     #freelance {
         margin: 1rem 0;
     }

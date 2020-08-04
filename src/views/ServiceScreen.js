@@ -11,6 +11,9 @@ import CategoryHeader from '../components/headers/CategoryHeader';
 import Footer from "../components/headers/Footer";
 
 import Loader from '../components/Loader';
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import CardDeck from "react-bootstrap/CardDeck";
 
 // Redux
 import { connect } from 'react-redux';
@@ -56,25 +59,31 @@ const ServiceScreen = ({ location: { state }, token }) => {
       ) : (
         <div className='gig-container'>
           <div className='gig-left-container'>
-            <h1>{service.name}</h1>
-            <Link to={`/${username}`}>{service.username}</Link>
+            <div className='service-name-div'>
+            <h1 className='service-name-h1'>{service.name}</h1>
+            </div>
+            {/*<Link to={`/${username}`}>{service.username}</Link>*/}
             <br />
+            <div>
             <img
               src={`http://localhost:8000/images/${service.image}`}
               alt={'Profile'}
-              className='current-service-image'
-            />
+              className='current-service-image' />
+            </div>
           </div>
           <div className='gig-right-container'>
             <div className='container'>
-              <div>
+              <div className='service-name-div-1'>
+                <h1 className='service-description'>Service Description</h1>
+              </div>
+              <div className="product-details">
                 <p>{service.description}</p>
                 <p>€{service.price}</p>
                 <StripeCheckout
-                  stripeKey={process.env.REACT_APP_STRIPE_KEY}
-                  token={makePayment}
-                  name={`Buy ${service.name}`}
-                  amount={service.price * 100}
+                    stripeKey={process.env.REACT_APP_STRIPE_KEY}
+                    token={makePayment}
+                    name={`Buy ${service.name}`}
+                    amount={service.price * 100}
                 />
               </div>
             </div>
