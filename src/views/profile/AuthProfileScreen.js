@@ -108,6 +108,19 @@ const AuthProfileScreen = ({ match, loggedInUser }) => {
                 Edit profile
               </Link>
               <br/>
+              <br/>
+              <hr className="hr-line"/>
+              <p>Add new service</p>
+              <br/>
+
+              <Link
+                  to={{
+                    pathname: `/${loggedInUser.username}/create/services/new`,
+                  }}
+                  className="service-profile-button"
+              >
+                Create service
+              </Link>
               <hr className="hr-line"/>
 
               <p className='education-text'>Skills</p>
@@ -154,6 +167,7 @@ const AuthProfileScreen = ({ match, loggedInUser }) => {
           )}
           <div className="gigs-container">
             <div className="gigs-header">
+
               <p className='active-services'>Active services</p>
             </div>
             <div className="gigs-services-container">
