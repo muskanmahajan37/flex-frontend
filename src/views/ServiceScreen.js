@@ -151,33 +151,6 @@ const ServiceScreen = ({location: {state}, token}) => {
             <br/>
             <br/>
             <div>
-                <Carousel >
-                    <Carousel.Item>
-                        <img
-                            height="500px"
-                            className="d-block w-100"
-                            src={`http://localhost:8000/images/react-native.jpg`}
-                            alt="First slide"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            height="500px"
-                            className="d-block w-100"
-                            src={`http://localhost:8000/images/swift-1.jpg`}
-                            alt="Third slide"
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            height="500px"
-                            className="d-block w-100"
-                            src={`http://localhost:8000/images/web-1.jpg`}
-                            alt="Third slide"
-                        />
-                    </Carousel.Item>
-                </Carousel>
-
             </div>
             <div className={'footer'}>
                 <div className={'Foot'}>
