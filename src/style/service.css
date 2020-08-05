@@ -240,9 +240,8 @@ img.card-img {
     max-width: 65%;
 }
 
-#root {
-    height: 1280px;
-}
+/*#root {*/
+/*}   */
 
 .service-name-h1:hover {
     color: green;

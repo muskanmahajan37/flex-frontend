@@ -108,7 +108,7 @@ const CategoryScreen = ({ location }) => {
 
 
       </div>
-      <div className={'footer'}>
+      <div className={'ff'}>
         <div className={'Foot'}>
           <Footer/>
 

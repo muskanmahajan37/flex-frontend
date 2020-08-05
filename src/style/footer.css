@@ -1,9 +1,3 @@
-.footer{
-    margin-top: 1200px;
-}
-.foot{
-    margin-top: 100vh;
-}
 .Foot {
     text-align: center;
     width: 100%;
@@ -14,7 +8,18 @@
     display: flex;
     align-items: center;
 }
-
+.right-foot{
+    padding-top: 200px;
+}
+.ff{
+    margin-top: 1200px;
+}
+.footer{
+    margin-top: 1200px;
+}
+.foot{
+    margin-top: 100vh;
+}
 #footer-left {
     text-align: left;
     padding-left: 4rem;

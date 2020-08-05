@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
 // Styling
-import '../style/servicescreen.css';
+import '../style/service.css';
 // Components
 import Header from '../components/headers/Header';
 import CategoryHeader from '../components/headers/CategoryHeader';
@@ -152,7 +152,7 @@ const ServiceScreen = ({location: {state}, token}) => {
             <br/>
             <div>
             </div>
-            <div className={'footer'}>
+            <div className={'right-foot'}>
                 <div className={'Foot'}>
                     <Footer/>
                 </div>

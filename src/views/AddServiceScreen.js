@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 // React-hook-form (used for validation)
 import { useForm } from 'react-hook-form';
 import { connect } from 'react-redux';
+import Footer from "../components/headers/Footer";
 const AddServiceScreen = ({ categories, userId, username, token }) => {
   const [name, setName] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(1);
@@ -154,7 +155,9 @@ const AddServiceScreen = ({ categories, userId, username, token }) => {
             </Form>
           </div>
         </div>
+        <Footer/>
       </div>
+
   );
 };
 const mapStateToProps = (state) => ({
