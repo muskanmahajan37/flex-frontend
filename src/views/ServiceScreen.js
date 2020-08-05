@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
 // Styling
-import '../style/service.css';
+import '../style/servicescreen.css';
 // Components
 import Header from '../components/headers/Header';
 import CategoryHeader from '../components/headers/CategoryHeader';

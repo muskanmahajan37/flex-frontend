@@ -1,0 +1,279 @@
+/* category page */
+.hero {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.subcategory-container {
+    width: 17.5vw;
+}
+
+.services-container {
+    width: 82.5vw;
+    height: 155vh;
+}
+
+.services-container h1 {
+    margin-top: 27px;
+}
+
+.services-container h1:hover {
+    color: green;
+}
+
+.inner-service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.subcategory-list {
+    margin: 0;
+}
+
+.category-main-title {
+    font-size: 1.25rem;
+    margin-top: 30px;
+}
+
+h1 {
+    margin-top: 1000px;
+}
+
+.category-main-description {
+    margin-top: 1px;
+    font-size: 1rem;
+    color: #7a7a7a;
+}
+
+.category-main-description:hover {
+    color: #1CBE88;
+
+}
+
+.subcategory-name {
+    font-size: 1.1rem;
+    color: #adadad;
+    margin-bottom: 2%;
+}
+
+.subcategory-name:hover {
+    color: #1CBE88;
+}
+
+.subcategory-list:hover {
+    color: #1CBE88;
+    font-weight: 800;
+
+}
+
+.center-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100%;
+}
+
+/* service component */
+.service-container {
+    margin-top: 70px;
+    height: 58vh;
+    width: 20vw;
+    border: 1px solid #bababa;
+    margin-bottom: 5%;
+    border-radius: 6px;
+    box-shadow: 2px 3px 3px lightslategray;
+}
+
+
+.service-image {
+    height: 40vh;
+    width: 100%;
+    border: 2px solid #F3F3F3;
+    border-radius: 10px;
+}
+
+.service-details-container {
+    margin-top: 5%;
+    padding-left: 2.5%;
+    margin-left: 5%;
+    font-size: 14px;
+    text-transform: uppercase;
+    width: 90%;
+}
+
+.service-container:hover {
+    text-decoration: none;
+    color: #1cbe88;
+}
+
+
+.user-name {
+    margin: 0;
+    font-size: 14px;
+    color: black;
+}
+
+.user-name:hover {
+    color: black;
+}
+
+.service-name {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    transition: all 0.3s ease;
+}
+
+.product-details{
+    height: 500px;
+    margin:10px;
+}
+
+button.StripeCheckout{
+    margin:0 auto;
+    margin-left: 10px;
+}
+
+div.container {
+    height: 14.5%;
+    color: whitesmoke;
+    background-color: black;
+}
+
+.service-name:hover {
+    color: green;
+    font-size: 16px;
+}
+
+.service-price {
+    margin: 0;
+}
+
+/* service screen */
+.gig-container {
+    margin-top: 5%;
+    width: 100%;
+    height: 110vh;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid gray;
+    border-radius: 3px;
+
+}
+
+.gig-container-loading {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.active-services {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin-right: 18px;
+}
+
+div.card {
+    height: 500px;
+    border-radius: 10px;
+}
+
+img.card-img {
+    height: 10px;
+    width: 10px;
+}
+
+.active-services:hover {
+    color: green;
+}
+
+
+.gig-left-container {
+    height: auto;
+    width: 100%;
+}
+
+.service-name-div {
+    border: 0.1px solid black;
+    height: 14.5%;
+    background-color: #1CBE88;
+    text-transform: uppercase;
+    max-width: 100%;
+}
+
+.service-name-div-1 {
+    border: 0.1px solid black;
+    height: 14.5%;
+    text-transform: uppercase;
+    max-width: 100%;
+}
+
+.product-details {
+    margin-top: 100px;
+    color: black
+}
+
+.service-name-h1 {
+    margin: 0 auto;
+    margin-top: 3.5%;
+    color: white;
+    font-size: 20px;
+    font-max-size: 2px;
+    max-width: 65%;
+}
+
+.service-description {
+    margin: 0 auto;
+    margin-top: 7.1%;
+    color: white;
+    font-size: 20px;
+    font-max-size: 2px;
+    max-width: 65%;
+}
+
+#root {
+    height: 1280px;
+}
+
+.service-name-h1:hover {
+    color: green;
+}
+
+.current-service-image {
+    margin: 0 auto;
+    margin-top: 5%;
+    display: flex;
+    width: 65%;
+    height: 70vh;
+    padding: 10px;
+    border: 1px solid gray;
+    box-shadow: 3px 3px 3px lightslategray;
+    border-radius: 8px;
+}
+
+.gig-right-container {
+    height: 100%;
+    width: 50%;
+    border-radius: 1px;
+    border-left: 1px solid gray;
+}
+
+.similar-services{
+    margin-top: 3.5%;
+    text-align: center;
+    font-size: 29px;
+    font-family: "Courier New";
+}
+
+.similar-services:hover{
+    color:green;
+}
