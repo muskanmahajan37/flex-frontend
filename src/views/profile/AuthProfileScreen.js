@@ -7,6 +7,8 @@ import "../../style/profile.css";
 // Components
 import Header from "../../components/headers/Header";
 import Loader from "../../components/Loader";
+import Footer from "../../components/headers/Footer";
+
 
 // Redux
 import { connect } from "react-redux";
@@ -108,9 +110,15 @@ const AuthProfileScreen = ({ match, loggedInUser }) => {
               </Link>
               <br/>
               <br/>
-              <br/>
+              <Link
+                  to={{
+                    pathname: `/create/services/new`,
+                  }}
+                  className="service-profile-button"
+              >
+                Create service
+              </Link>
               <hr className="hr-line"/>
-
               <p className='education-text'>Skills</p>
               <ul className="skill-list">
                 {userSkills.map(function(name, index){
@@ -155,6 +163,7 @@ const AuthProfileScreen = ({ match, loggedInUser }) => {
           )}
           <div className="gigs-container">
             <div className="gigs-header">
+
               <p className='active-services'>Active services</p>
             </div>
             <div className="gigs-services-container">
@@ -183,11 +192,14 @@ const AuthProfileScreen = ({ match, loggedInUser }) => {
                   </div>
                 )
               ) : (
+
                 userServices.map((service, index) => (
                   <Card key={index}>
-                    <Card.Img
-                      src={`http://localhost:8000/images/${service.image}`}
-                    />
+                    <div className={'s-services'}>
+                      <Card.Img
+                          src={`http://localhost:8000/images/${service.image}`}
+                      />
+                    </div>
                     <Card.Text>{service.title}</Card.Text>
                   </Card>
                 ))
@@ -195,6 +207,9 @@ const AuthProfileScreen = ({ match, loggedInUser }) => {
             </div>
           </div>
         </div>
+      </div>
+      <div className={'foot'}>
+        <Footer/>
       </div>
     </div>
   );

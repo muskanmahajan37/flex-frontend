@@ -17,25 +17,25 @@ export default class Footer extends Component {
                     </div>
 
                     <div className="col-4 col-md-2">
-                        <h5>Category</h5>
+                        <h5><b>Category</b></h5>
                         <p>Programming</p>
                         <p>Economy</p>
                         <p>Music</p>
                     </div>
                     <div className="col-4 col-md-2">
-                        <h5>About</h5>
+                        <h5><b>About</b></h5>
                         <p>About us</p>
                         <p>Our Plans</p>
                         <p>What we offer</p>
                     </div>
                     <div className="col-4 col-md-2">
-                        <h5>Support</h5>
+                        <h5><b>Support</b></h5>
                         <p>Need help?</p>
                         <p>Settings</p>
                         <p>Contact us</p>
                     </div>
                     <div className="col-4 col-md-2">
-                        <h5>Community</h5>
+                        <h5><b>Community</b></h5>
                         <p>Meet up</p>
                         <p>Social media</p>
                         <p>Company</p>

@@ -7,6 +7,7 @@ import '../style/profile.css';
 
 // Components
 import Header from '../components/headers/Header';
+import Footer from '../components/headers/Footer';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -59,6 +60,7 @@ const EditProfile = ({ match, isAuthenticated, currentUser, editUser }) => {
   return !isAuthenticated ? (
     <Redirect to='/' />
   ) : (
+      <div>
     <div className='parent'>
       <Header />
       {user === currentUser.username ? (
@@ -161,6 +163,8 @@ const EditProfile = ({ match, isAuthenticated, currentUser, editUser }) => {
         </div>
       )}
     </div>
+        <Footer/>
+      </div>
   );
 };
 

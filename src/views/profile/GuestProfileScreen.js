@@ -9,6 +9,7 @@ import CategoryHeader from '../../components/headers/CategoryHeader';
 import Header from '../../components/headers/Header';
 import Loader from '../../components/Loader';
 
+
 // Redux
 import { connect } from 'react-redux';
 import Card from 'react-bootstrap/Card';

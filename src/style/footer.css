@@ -1,20 +1,25 @@
-
-
-.footer{
-    margin-top: 900px;
-}
-
 .Foot {
     text-align: center;
     width: 100%;
     position: relative;
-    margin-top: 100px;
     padding-bottom: 20px;
+    padding-top: 30px;
     background-color: #fafafa;
     display: flex;
     align-items: center;
 }
-
+.right-foot{
+    padding-top: 200px;
+}
+.ff{
+    margin-top: 1200px;
+}
+.footer{
+    margin-top: 1200px;
+}
+.foot{
+    margin-top: 100vh;
+}
 #footer-left {
     text-align: left;
     padding-left: 4rem;

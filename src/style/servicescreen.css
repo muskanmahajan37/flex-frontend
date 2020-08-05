@@ -128,13 +128,13 @@ h1 {
     transition: all 0.3s ease;
 }
 
-.product-details {
+.product-details{
     height: 500px;
-    margin: 10px;
+    margin:10px;
 }
 
-button.StripeCheckout {
-    margin: 0 auto;
+button.StripeCheckout{
+    margin:0 auto;
     margin-left: 10px;
 }
 
@@ -240,8 +240,9 @@ img.card-img {
     max-width: 65%;
 }
 
-/*#root {*/
-/*}   */
+#root {
+    height: 1280px;
+}
 
 .service-name-h1:hover {
     color: green;
@@ -271,7 +272,7 @@ img.card-img {
     text-align: center;
     font-size: 29px;
     font-family: "Courier New";
- }
+}
 
 .similar-services:hover{
     color:green;
