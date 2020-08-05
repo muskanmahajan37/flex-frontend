@@ -60,6 +60,7 @@ const EditProfile = ({ match, isAuthenticated, currentUser, editUser }) => {
   return !isAuthenticated ? (
     <Redirect to='/' />
   ) : (
+      <div>
     <div className='parent'>
       <Header />
       {user === currentUser.username ? (
@@ -161,14 +162,9 @@ const EditProfile = ({ match, isAuthenticated, currentUser, editUser }) => {
           <h1>401 Not authorized</h1>
         </div>
       )}
-      <div className={'footer'}>
-        <div className={'Foot'}>
-          <Footer/>
-
-        </div>
-      </div>
     </div>
-
+        <Footer/>
+      </div>
   );
 };
 

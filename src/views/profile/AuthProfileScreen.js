@@ -7,6 +7,7 @@ import "../../style/profile.css";
 // Components
 import Header from "../../components/headers/Header";
 import Loader from "../../components/Loader";
+import Footer from "../../components/headers/Footer";
 
 
 // Redux
@@ -166,7 +167,6 @@ const AuthProfileScreen = ({ match, loggedInUser }) => {
               <p className='active-services'>Active services</p>
             </div>
             <div className="gigs-services-container">
-
               {servicesLoading ? (
                 <div className="center-container">
                   <Loader />
@@ -207,6 +207,9 @@ const AuthProfileScreen = ({ match, loggedInUser }) => {
             </div>
           </div>
         </div>
+      </div>
+      <div className={'foot'}>
+        <Footer/>
       </div>
     </div>
   );

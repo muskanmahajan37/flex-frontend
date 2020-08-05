@@ -6,12 +6,10 @@
 }
 
 .profile-container {
-    height: 159vh;
+    height: 130vh;
     width: 29vw;
     text-align: center;
     border: 1px solid lightslategray;
-    border-radius: 20px;
-    box-shadow: 6px 6px 6px lightslategray;
 }
 
 .profile-container-loading {
@@ -22,7 +20,6 @@
     height: 75vh;
     width: 25vw;
     border: 1px solid #bababa;
-    border-radius: 1px;
 }
 
 .current-user-image {
@@ -39,16 +36,9 @@
     font-size: 19px;
 }
 
-img {
-    border: 100px solid red;
-}
-
 .gigs-container {
-    height: 75vh;
     width: 55vw;
     border: 1px solid lightslategray;
-    border-radius: 15px;
-    box-shadow: 6px 6px 6px lightslategray;
 }
 
 .gigs-header {
@@ -64,8 +54,13 @@ img {
 }
 
 .gigs-services-container {
-  width: 100%;
-  height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    border-bottom: white;
 }
 
 .center-container{
@@ -83,29 +78,18 @@ img {
 img.card-img {
     display: flex;
     margin: 0 auto;
-    margin-top: 10px;
-    height: 400px;
-    width: 75%;
-    border-radius: 30px;
-    box-shadow: 9px 9px 9px lightslategray;
+    width: 100%;
+    height:150px;
 }
-
 div.card {
-    height: 500px;
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
     display: flex;
     justify-content: space-between;
-    margin: 20px;
-    margin-top: 40px;
-    border: 1px solid gray;
-    box-shadow: 2px 2px 2px 3px lightslategray;
-    padding-top: 20px;
+    padding: 0;
+    border-radius: 0;
 }
-
-img.card-img {
-    height: 80%;
-    width: 80%;
-}
-
 .center-container-description {
   margin-top: 15%;
 }
