@@ -10,6 +10,8 @@ import Footer from "../components/headers/Footer";
 
 import Loader from '../components/Loader';
 import Card from "react-bootstrap/Card";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import Container from "react-bootstrap/Container";
 import CardGroup from "react-bootstrap/CardGroup";
 import Carousel from "react-bootstrap/Carousel";
 // Redux
@@ -88,14 +90,16 @@ const ServiceScreen = ({location: {state}, token}) => {
                                 <h1 className='service-description'>Service Description</h1>
                             </div>
                             <div className="product-details">
-                                <p>{service.description}</p>
-                                <p>€{service.price}</p>
+                                <p id="service-description-text">{service.description}</p>
+                                <p id="service-description-price">€{service.price}</p>
+                                <div id="stripe-check-out">
                                 <StripeCheckout
                                     stripeKey={process.env.REACT_APP_STRIPE_KEY}
                                     token={makePayment}
                                     name={`Buy ${service.name}`}
                                     amount={service.price * 100}
                                 />
+                                </div>
                             </div>
                         </div>
 
@@ -107,45 +111,26 @@ const ServiceScreen = ({location: {state}, token}) => {
             <div>
                 <CardGroup>
                     <Card>
-                        <Card.Img variant="top" height="230.77px" src={`http://localhost:8000/images/web-4.jpg`}/>
+                        <Card.Img variant="top" src={`http://localhost:8000/images/web-4.jpg`}/>
                         <Card.Body>
                             <Card.Title>Full stack Developer</Card.Title>
-                            <Card.Text>
-                                I will develop your website front and back-end based on your requirements
-                            </Card.Text>
                         </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Active in last 2 months </small>
-                        </Card.Footer>
                     </Card>
                     <Card>
                         <Card.Img variant="top" src={`http://localhost:8000/images/wordpress-2.jpg`}/>
                         <Card.Body>
                             <Card.Title>Wordpress Developer</Card.Title>
-                            <Card.Text>
-                                I will develop your website using wordpress and other plugins as necessary from the
-                                client
-                            </Card.Text>
                         </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Active in last 3 weeks</small>
-                        </Card.Footer>
                     </Card>
                     <Card>
                         <Card.Img variant="top" src={`http://localhost:8000/images/react-native.jpg`}/>
                         <Card.Body>
                             <Card.Title>React Native Developer</Card.Title>
-                            <Card.Text>
-                                I will build mobile applications using react-native framework. Lots of experience
-                                with small/large projects already delivered
-                            </Card.Text>
                         </Card.Body>
-                        <Card.Footer>
-                            <small className="text-muted">Active in last 10 days</small>
-                        </Card.Footer>
                     </Card>
                 </CardGroup>
             </div>
+
             <br/>
             <br/>
             <br/>

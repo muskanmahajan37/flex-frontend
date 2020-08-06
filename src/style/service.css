@@ -160,8 +160,9 @@ div.container {
     height: 110vh;
     display: flex;
     justify-content: space-around;
-    border: 1px solid gray;
+    border: 0.5px solid gray;
     border-radius: 3px;
+    box-shadow: 1.5px 1.5px 1.5px lightslategray ;
 
 }
 
@@ -275,4 +276,24 @@ img.card-img {
 
 .similar-services:hover{
     color:green;
+}
+
+#service-description-text{
+    font-size: 19px;
+    margin-top:33%;
+}
+
+#service-description-price{
+    color:green;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+div#stripe-check-out{
+    height: 300px;
+    position: relative;
+    margin-right: 100px;
+    left: -20px;
+    width: 100%;
 }

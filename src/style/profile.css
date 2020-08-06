@@ -26,7 +26,7 @@
     margin-top: 8%;
     border-radius: 50%;
     height: 30%;
-    width: 70%;
+    width: 60%;
 }
 
 .current-user-username {
@@ -39,6 +39,7 @@
 .gigs-container {
     width: 55vw;
     border: 1px solid lightslategray;
+    border-bottom-color: white;
 }
 
 .gigs-header {
@@ -135,6 +136,7 @@ div.card {
 
 .education-text {
     font-weight: 500;
+    font-size: 17px;
     padding:0;
     margin:0;
 }
@@ -142,8 +144,8 @@ div.card {
 
 .hr-line {
     color: red;
-    background-color: #1CBE88;
-    height: 0.1px;
+    background-color: gray;
+    height: 0.3px;
 }
 
 .edit-profile-button:hover {
